@@ -50,26 +50,7 @@ p {
     border-left: 6px solid #5b9bd5;
     background-color: #dddddd;
 }
-.icon {
-  padding: 10px;
-  background: #5b9bd5;
-  color: white;
-  min-width: 50px;
-  text-align: center;
-}
-/* Full-width input fields */
-input[type=text], input[type=password], input[type=number] {
-      width: 100%;
-      padding: 15px;
-      margin: 5px 0 22px 0;
-      display: inline-block;
-      border: none;
-      background: #dcdcdc;
-}
-input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
-      background-color: #ddd;
-      outline: none;
-}
+
 hr {
   border: 1px solid #dcdcdc;
   margin-bottom: 25px;
@@ -84,6 +65,27 @@ hr {
   letter-spacing: .1rem;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+/* Login */
+.icon {
+  padding: 10px;
+  background: #5b9bd5;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
+input[type=text], input[type=password], input[type=number] {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      display: inline-block;
+      border: none;
+      background: #dcdcdc;
+}
+input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
+      background-color: #ddd;
+      outline: none;
 }
 
 /* NAV BAR */
