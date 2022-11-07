@@ -47,7 +47,7 @@ html, body {
 
 p {
     border-left: 6px solid #ffbb33;
-    background-color: #e5e8e3;
+    background-color: #5b9bd5;
 }
 
 hr {
@@ -58,7 +58,7 @@ hr {
 
 /* Set a style for the submit button */
 .registerbtn {
-  background-color: #ffbb33;
+  background-color: #5b9bd5;
   color: white;
   padding: 8px;
   border: none;
@@ -143,11 +143,15 @@ li.dropdown {
 }
 
 .dropdown-content a {
-  color: black;
+  color: white;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
   text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .rechts {
@@ -155,6 +159,7 @@ li.dropdown {
     justify-content: right;
     align-items: right;
 }
+
 .menu-dienstenavigation-container {
     text-align: right;
     background-color: #5b9bd5;
