@@ -214,7 +214,6 @@ li.dropdown {
     margin: 0 auto;
 }
 .site-header-content {
-    height: 100%;
     background-color: white;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -255,4 +254,23 @@ li.dropdown {
 }
 .position-ref {
   position: relative;
+}
+
+
+/* FOOTER */
+
+.site-footer-content {
+    background-color: white;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    align-items: center;
+}
+
+
+.site-footer-inner {
+    position: relative;
+    align-items: center;
+    width: 88%;
+    margin: 0 auto;
 }
