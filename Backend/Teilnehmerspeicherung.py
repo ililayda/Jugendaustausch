@@ -5,6 +5,14 @@ import dates as dt
 import flask
 from flask import Flask
 
+anrede = "anrede"
+name = "name"
+vorname = "vorname"
+klasse = "klasse"
+klassenleitung = "klassenleitung"
+mobilfunknummer ="nr"
+volljährig = 1
+
 def create_connection(db_file):
 
     conn = None
@@ -30,7 +38,7 @@ def main():
     
     if conn is not None:
         with conn:
-            new_participant = (str(today), , , , , , , ,0)
+            new_participant = (str(today),anrede ,name ,vorname ,klasse ,klassenleitung ,mobilfunknummer ,volljährig ,0)
             insert_participant(conn, new_participant)
     else:
         print("Error! cannot create the database connection.")
