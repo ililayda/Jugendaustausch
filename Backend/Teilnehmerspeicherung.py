@@ -38,7 +38,7 @@ def main():
     
     if conn is not None:
         with conn:
-            new_participant = (str(today),anrede ,name ,vorname ,klasse ,klassenleitung ,mobilfunknummer ,volljährig ,0)
+            new_participant = (str(dt.today),anrede ,name ,vorname ,klasse ,klassenleitung ,mobilfunknummer ,volljährig ,0)
             insert_participant(conn, new_participant)
     else:
         print("Error! cannot create the database connection.")
