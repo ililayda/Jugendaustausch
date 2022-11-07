@@ -1,0 +1,49 @@
+<html>
+<head>
+</head>
+<body>
+<div class="flex-center position-ref full-height">
+    <div class="content">
+        <div class="container">
+<form method="post">
+
+
+
+ <h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
+  <p><i>Du musst dich einloggen, um die Website komplett zu benutzen. </i></p>
+  <label for="inputEmail"><i class="fa fa-envelope icon"> Email </i></label>
+  <input autocomplete="email" autofocus class="form-control" id="inputEmail" name="email"
+         placeholder="Email eintagen" required type="text">
+  <label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
+  <input autocomplete="current-password" class="form-control" id="inputPassword" name="password"
+         placeholder="Password eintragen" required type="password">
+
+
+
+ <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
+
+
+
+ <div class="checkbox mb-3">
+    <label>
+      <input name="_remember_me" type="checkbox"> Erinnere dich an mich
+    </label>
+  </div>
+
+
+
+ <p> Mit dem Einloggen akzptierst du unsere Terms of Service </p>
+ 
+
+
+ <a class="registerbtn" class="btn btn-lg btn-primary" href="menu.html" type="submit">
+    Einloggen
+  </a>
+
+
+
+</form>
+        </div>
+    </div>
+</div>  
+</body>
