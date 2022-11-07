@@ -57,23 +57,6 @@ hr {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #5b9bd5;
-  color: white;
-  padding: 8px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  margin-top: 11px;
-  max-width: 600px;
-  max-height: 42px
-}
-.registerbtn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
 .links > a {
   color: #c6d0d4;
   padding: 0 25px;
@@ -103,6 +86,22 @@ input[type=text], input[type=password], input[type=number] {
 input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
       background-color: #ddd;
       outline: none;
+}
+
+.registerbtn {
+  background-color: #5b9bd5;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  margin-top: 11px;
+  max-width: 600px;
+  max-height: 42px
+}
+.registerbtn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
 /* NAV BAR */
