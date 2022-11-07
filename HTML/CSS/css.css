@@ -104,6 +104,43 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
+.btn-primary:btn {
+  background-color: #96bd75;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  margin-top: 11px;
+  max-width: 600px;
+}
+
+.btn-primary {
+  color: #fff;
+
+  &:hover {
+    color: #fff;
+  }
+}
+.btn-sm {
+  background-color: #96bd75;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 1;
+  margin-top: 11px;
+  max-width: 80px;
+}
+
+.btn-sm:hover .btn-sm {
+  color: white !important;
+  background-color: #648a42;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
 /* NAV BAR */
 ul {
     list-style-type: none;
