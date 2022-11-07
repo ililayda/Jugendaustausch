@@ -13,6 +13,24 @@ klassenleitung = "klassenleitung"
 mobilfunknummer ="nr"
 volljährig = 1
 
+@app.route("/post_field", methods=["POST"])
+def get_participant_data():
+    for key, value in request.form.items():
+            if key == "name":
+                name = value
+            elif key == "vorname":
+                vorname = value
+            elif key == "anrede":
+                anrede = value
+            elif key == "klasse":
+                klasse = value
+            elif key == "klassenleitung":
+                klassenleitung = value
+            elif key == "mobilfunknummer":
+                mobilfunknummer = value
+            elif key == "volljährig":
+                volljährig = value
+
 def create_connection(db_file):
 
     conn = None
