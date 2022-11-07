@@ -1,0 +1,38 @@
+html, body {
+  background-color: rgb(255, 254, 248);
+  color: #192211;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  height: 100vh;
+  margin: 0;
+}
+
+p {
+    border-left: 6px solid #ffbb33;
+    background-color: #e5e8e3;
+}
+
+hr {
+  border: 1px solid #dcdcdc;
+  margin-bottom: 25px;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+/* Set a style for the submit button */
+.registerbtn {
+  background-color: #ffbb33;
+  color: white;
+  padding: 8px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  margin-top: 11px;
+  max-width: 600px;
+  max-height: 42px
+}
+.registerbtn:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
