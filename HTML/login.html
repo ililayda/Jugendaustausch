@@ -8,38 +8,29 @@
     <div class="content">
         <div class="container">
 <form method="post">
-
-<img src="DPJW.jpg" width="550" height="200">  </img>
-
- <h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
-  <p><i>Du musst dich einloggen, um die Website komplett zu benutzen. </i></p>
-  <label for="User"><i class="fa fa-envelope icon"> Username </i></label>
-  <input autocomplete="username" autofocus class="form-control" id="User" name="username"
-         placeholder="Username eintagen" required type="text">
-  <label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
-  <input autocomplete="current-password" class="form-control" id="inputPassword" name="password"
-         placeholder="Password eintragen" required type="password">
-
- <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
-
- <div class="checkbox mb-3">
-    <label>
-      <input name="_remember_me" type="checkbox"> Erinnere dich an mich
+    <img src="DPJW.jpg" width="550" height="200">  </img>
+    <h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
+    <p><i>Du musst dich einloggen, um die Website komplett zu benutzen. </i></p>
+    <label for="User"><i class="fa fa-envelope icon"> Username </i></label>
+    <input autocomplete="username" autofocus class="form-control" id="User" name="username"
+           placeholder="Username eintagen" required type="text">
+    <label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
+    <input autocomplete="current-password" class="form-control" id="inputPassword" name="password"
+           placeholder="Password eintragen" required type="password">
+    <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
+    <div class="checkbox mb-3"><label>
+        <input name="_remember_me" type="checkbox"> Erinnere dich an mich
     </label>
-  </div>
+    </div>
+    <p> Mit dem Einloggen akzptierst du unsere Terms of Service </p>
 
- <p> Mit dem Einloggen akzptierst du unsere Terms of Service </p>
- 
- <a href="index.html" class="registerbtn" class="btn btn-lg btn-primary"  type="submit">
-    Einloggen
-  </a>
- 
- <a href="Anmeldeformular_2022.doc" download class="registerbtn" class="btn btn-rg btn-primary"  type="submit">
-    Registrieren
- </a>
+    <a href="index.html" class="registerbtn" class="btn btn-lg btn-primary"  type="submit">Einloggen
+    </a>
 
+    <a href="Anmeldeformular_2022.doc" download class="registerbtn" class="btn btn-rg btn-primary"  type="submit">Registrieren
+    </a>
 </form>
         </div>
     </div>
-</div>  
+</div>
 </body>
