@@ -45,31 +45,15 @@ html, body {
   --wp--preset--font-size--x-large: 42px;
 }
 
+/* GENERAL */
 p {
-    border-left: 6px solid #ffbb33;
-    background-color: #5b9bd5;
+    border-left: 6px solid #5b9bd5;
+    background-color: #dddddd;
 }
 
 hr {
   border: 1px solid #dcdcdc;
   margin-bottom: 25px;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
-}
-
-/* Set a style for the submit button */
-.registerbtn {
-  background-color: #5b9bd5;
-  color: white;
-  padding: 8px;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  opacity: 0.9;
-  margin-top: 11px;
-  max-width: 600px;
-  max-height: 42px
-}
-.registerbtn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 
@@ -83,24 +67,7 @@ hr {
   text-transform: uppercase;
 }
 
-.container {
-  padding: 16px;
-  background-color: white;
-  text-align: center;
-}
-.full-height {
-  height: 100vh;
-}
-.flex-center {
-  align-items: center;
-  display: flex;
-  justify-content: center;
-  background-color: white;
-}
-.position-ref {
-  position: relative;
-}
-
+/* NAV BAR */
 ul {
     list-style-type: none;
     margin: 0;
@@ -165,6 +132,9 @@ li.dropdown {
     background-color: #5b9bd5;
 }
 
+
+/* HEADER */
+
 .widget-area header-widgets {
     width: 88%;
     margin: 0 auto;
@@ -185,9 +155,31 @@ li.dropdown {
     margin: 0 auto;
 }
 
+
+/* <HEADER CONTENT> */
 .mid-part {
   background-color: #5b9bd5;
    height: 100px;
    width: 100%;
    align-items: center;
+}
+
+
+/* CONTENT */
+.container {
+  padding: 16px;
+  background-color: white;
+  text-align: center;
+}
+.full-height {
+  height: 100vh;
+}
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+.position-ref {
+  position: relative;
 }
