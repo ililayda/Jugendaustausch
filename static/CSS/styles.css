@@ -98,7 +98,8 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
   opacity: 0.9;
   margin-top: 11px;
   max-width: 600px;
-  max-height: 42px
+  max-height: 42px;
+  text-decoration: none !important;
 }
 .registerbtn:hover {
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
