@@ -37,7 +37,7 @@ def create_connection(db_file):
 
 def insert_admin(conn, new_admin):
 
-    sql = "INSERT INTO admins(email, password, name, vorname) VALUES(?, ?, ?, ?); "
+    sql = "INSERT INTO admins(superadmin, email, password, name, vorname) VALUES(?, ?, ?, ?, ?); "
     cur = conn.cursor()
     cur.execute(sql, new_admin)
     conn.commit()
@@ -49,7 +49,7 @@ def main():
     
     if conn is not None:
         with conn:
-            new_admin = (email, password, name, vorname)
+            new_admin = (0, email, password, name, vorname)
             insert_admin(conn, new_admin)
     else:
         print("Error! cannot create the database connection.")
