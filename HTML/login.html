@@ -57,9 +57,9 @@
 	<div class="container"><form method="post">
 		<img src="public/DPJW.jpg" width="550" height="180">
 		<h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
-		<p><i>Du musst dich einloggen, um die Website komplett zu benutzen. </i></p>
-		<label for="User"><i class="fa fa-envelope icon"> Username </i></label>
-		<input autocomplete="username" autofocus class="form-control" id="User" name="username" placeholder="Nutzernamen eintagen" required type="text">
+		<p><i>Du musst dich einloggen, um die Website komplett nutzen zu können. </i></p>
+		<label for="email"><i class="fa fa-envelope icon"> Email </i></label>
+		<input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintagen" required type="text">
 		<label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
 		<input autocomplete="current-password" class="form-control" id="inputPassword" name="password" placeholder="Password eintragen" required type="password">
 		<input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
@@ -69,7 +69,7 @@
 			</label>
 		</div>
 		<p> Mit dem Einloggen akzptierst du unsere <a href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
-		<a href="index.html" class="registerbtn btn btn-lg btn-primary"  type="submit">Einloggen
+		<a href="index.html" class="registerbtn btn btn-lg btn-primary" type="submit">Einloggen
 		</a>
 		<a href="Anmeldeformular_2022.doc" download class="registerbtn btn btn-rg btn-primary"  type="submit">
 			Registrieren
