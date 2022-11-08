@@ -256,6 +256,12 @@ li.dropdown {
   position: relative;
 }
 
+.img-border {
+    border: 4px solid;
+    color: #dddddd;
+    padding: 0px;
+}
+
 
 /* FOOTER */
 
