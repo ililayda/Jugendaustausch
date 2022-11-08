@@ -34,7 +34,7 @@ def main():
     
     create_table_in_december =  "CREATE TABLE IF NOT EXISTS participants_"+ str(dt.next_year)+"(id integer PRIMARY KEY,datum text,anrede text,name text,vorname text,klasse text,klassenleitung text,mobilfunknummer text,volljährig integer,hat_bezahlt integer );"
     droped_table = "DROP TABLE IF EXISTS participants_"+str(dt.three_years_ago)+";"
-    if dt.current_month == '11':
+    if dt.current_month == 11:
         if conn is not None:
              with conn:
                  create_table(conn, create_table_in_december)
