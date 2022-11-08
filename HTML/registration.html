@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../static/CSS/styles.css"/>
 
     <!-- Function Password Confirm check -->
-    <script src="./JSON/function.js"></script>
+    <script type="text/javascript" src="./JSON/function.js"></script>
 
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
@@ -62,9 +62,9 @@
         <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintagen" required type="text">
 
         <label for="inputpassword"><i class="fa fa-key icon"> Passwort </i>
-            <input autocomplete="inputpassword" class="form-control" id="inputpassword" name="inputpassword" placeholder="Password eintragen" required type="password" onChange="onChange()">
+            <input autocomplete="inputpassword" class="form-control" id="inputpassword" name="inputpassword" placeholder="Password eintragen" required type="password">
         </label>
-            <input autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password" onchange="check()"/>
+            <input autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password" onchange="check()">
             <span id='message'></span>
 
 
