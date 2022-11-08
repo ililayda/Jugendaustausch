@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template</title>
+    <title>Login </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -18,60 +18,63 @@
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
 </head>
-
 <body>
 <section id="nav_menu-1" class="widget widget_nav_menu">
-    <div class="menu-dienstenavigation-container">
-        <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
-            <img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
-        </a>
-        <ul id="menu-dienstenavigation" class="rechts">
-            <li id="menu-item-stundenplan" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3118">
-                <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
-            </li>
-            <li id="menu-item-moodle" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
-            </li>
-            <li id="menu-item-office" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
-            </li>
-            <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
-            <li id="menu-item-login" class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Login</a>
-                <div class="dropdown-content">
-                    <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">Login</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
-                </div>
-            </li>
-        </ul>
-    </div>
+<div class="menu-dienstenavigation-container">
+    <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
+        <img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
+    </a>
+    <ul id="menu-dienstenavigation" class="rechts">
+        <li id="menu-item-stundenplan" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3118">
+            <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
+        </li>
+        <li id="menu-item-moodle" class="menu-item menu-item-type-custom menu-item-object-custom">
+            <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
+        </li>
+        <li id="menu-item-office" class="menu-item menu-item-type-custom menu-item-object-custom">
+            <a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
+        </li>
+        <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
+            <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
+        <li id="menu-item-login" class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Login</a>
+            <div class="dropdown-content">
+                <a target="_blank" rel="noopener" href="login.html">Login</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+    </ul>
+</div>
 </section>
-
 <div class="site-header-content">
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
-
         </div>
     </div>
 </div>
 <div class="mid-part"></div>
 <div class="flex-center position-ref full-height">
-    <div class="container">
-
-        <!-- ##### ADD CONTENT HERE ##### -->
-
-
-
+    <div class="container"><form method="post">
+        <img src="public/DPJW.jpg" width="550" height="180">
+        <h1 class="h3 mb-3 font-weight-normal">Registrieren</h1>
+        <p><i>Registriere dich um die Website besser nutzen zu können. </i></p>
+        <label for="email"><i class="fa fa-envelope icon"> Email </i></label>
+        <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintagen" required type="text">
+        <label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
+        <input autocomplete="current-password" class="form-control" id="inputPassword" name="password" placeholder="Password eintragen" required type="password">
+        <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
+        <input autocomplete="repeat-password" class="form-control" id="repeatPassword" name="repeatpassword" placeholder="Password wiederholen" required type="password">
+        <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
+        <p> Mit dem Einloggen akzptierst du unsere <a href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
+    </form>
     </div>
 </div>
-
 <div class="site-footer-content">
     <div class="site-footer-inner">
         <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
             <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
     </div>
 </div>
-
 </body>
+
