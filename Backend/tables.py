@@ -36,11 +36,13 @@ def main():
                                         klassenleitung text,
                                         mobilfunknummer text,
                                         volljährig integer,
+                                        email text,
                                         hat_bezahlt integer 
                                     ); """
 
     sql_create_admins_table = """CREATE TABLE IF NOT EXISTS admins (
                                     id integer PRIMARY KEY,
+                                    superadmin integer,
                                     email text,
                                     password text,
                                     name text,
@@ -48,7 +50,7 @@ def main():
                                 );"""
 
 
-    sql_create_users_table = """ CREATE TABLE IF NOT EXISTS users(id integer PRIMARY KEY, username text, password text);"""
+    sql_create_users_table = """ CREATE TABLE IF NOT EXISTS users(id integer PRIMARY KEY, email text, password text);"""
     
     conn = create_connection(database)
 
