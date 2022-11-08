@@ -1,10 +1,8 @@
-$('#inputpassword, #confirmpassword').on('keyup', function ()
-    {
-    if ($('#inputpassword').val() == $('#confirmpassword').val())
-    {
-        $('#pwmessage').html('Matching').css('color', 'green');
+function check() {
+    if(document.getElementById('inputpassword').value ===
+            document.getElementById('confirmpassword').value) {
+        document.getElementById('message').innerHTML = "match";
+    } else {
+        document.getElementById('message').innerHTML = "no match";
     }
-    else
-        $('#pwmessage').html('Not Matching').css('color', 'red');
-    }
-);
+}
