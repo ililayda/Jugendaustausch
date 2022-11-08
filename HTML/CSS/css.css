@@ -3,7 +3,7 @@ html, body {
   color: #192211;
   font-family: 'Nunito', sans-serif;
   font-weight: 200;
-  font-size: 18px;
+  font-size: 1em; /*18px*/
   height: 100vh;
   margin: 16px;
   text-align: center;
