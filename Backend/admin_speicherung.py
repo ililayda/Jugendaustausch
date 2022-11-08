@@ -21,7 +21,7 @@ def get_admin_data():
                 vorname = value
             elif key == "email":
                     email = value
-            elif key == "vorname":
+            elif key == "password":
                     password = value
 
 def create_connection(db_file):
