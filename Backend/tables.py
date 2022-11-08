@@ -41,6 +41,8 @@ def main():
 
     sql_create_admins_table = """CREATE TABLE IF NOT EXISTS admins (
                                     id integer PRIMARY KEY,
+                                    email text,
+                                    password text,
                                     name text,
                                     vorname text
                                 );"""
