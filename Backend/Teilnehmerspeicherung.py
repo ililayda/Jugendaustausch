@@ -12,6 +12,7 @@ klasse = "klasse"
 klassenleitung = "klassenleitung"
 mobilfunknummer ="nr"
 volljährig = 1
+email = "email"
 
 @app.route("/post_field", methods=["POST"])
 def get_participant_data():
@@ -30,6 +31,8 @@ def get_participant_data():
                 mobilfunknummer = value
             elif key == "volljährig":
                 volljährig = value
+            elif key == "email":
+                email = value
 
 def create_connection(db_file):
 
@@ -44,7 +47,7 @@ def create_connection(db_file):
 
 def insert_participant(conn, new_participant):
 
-    sql = "INSERT INTO participants_"+str(dt.current_year)+"(datum, anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, hat_bezahlt) VALUES(?,?,?,?,?,?,?,?,?); "
+    sql = "INSERT INTO participants_"+str(dt.current_year)+"(datum, anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email, hat_bezahlt) VALUES(?,?,?,?,?,?,?,?,?,?); "
     cur = conn.cursor()
     cur.execute(sql, new_participant)
     conn.commit()
@@ -56,7 +59,7 @@ def main():
     
     if conn is not None:
         with conn:
-            new_participant = (str(dt.today),anrede ,name ,vorname ,klasse ,klassenleitung ,mobilfunknummer ,volljährig ,0)
+            new_participant = (str(dt.today),anrede ,name ,vorname ,klasse ,klassenleitung ,mobilfunknummer ,volljährig, email,0)
             insert_participant(conn, new_participant)
     else:
         print("Error! cannot create the database connection.")
