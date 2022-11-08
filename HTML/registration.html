@@ -15,6 +15,8 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="../static/CSS/styles.css"/>
 
+
+
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
 </head>
@@ -58,11 +60,14 @@
         <label for="email"><i class="fa fa-envelope icon"> Email </i></label>
         <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintagen" required type="text">
 
-        <label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
-        <input autocomplete="current-password" class="form-control" id="inputPassword" name="password" placeholder="Password eintragen" required type="password">
+        <!-- Function- Password Confirm check -->
+        <script src="/JSON/function.js"></script>
 
-        <input autocomplete="repeat-password" class="form-control" id="repeatPassword" name="repeatpassword" placeholder="Password wiederholen" required type="password">
+        <label for="inputpassword"><i class="fa fa-key icon"> Passwort </i></label>
+        <input autocomplete="current_password" class="form-control" id="inputpassword" name="inputpassword" placeholder="Password eintragen" required type="password">
 
+        <input autocomplete="confirm_password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password">
+        <span id='pwmessage'></span>
 
         <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
         <a href="index.html" class="registerbtn btn btn-lg btn-primary" type="submit">Registrieren
