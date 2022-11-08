@@ -60,9 +60,9 @@
 
         <label for="inputPassword"><i class="fa fa-key icon"> Passwort </i></label>
         <input autocomplete="current-password" class="form-control" id="inputPassword" name="password" placeholder="Password eintragen" required type="password">
-        <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
+
         <input autocomplete="repeat-password" class="form-control" id="repeatPassword" name="repeatpassword" placeholder="Password wiederholen" required type="password">
-        <input name="_csrf_token" type="hidden" value="{{ csrf_token('authenticate') }}">
+
 
         <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
         <a href="index.html" class="registerbtn btn btn-lg btn-primary" type="submit">Registrieren
