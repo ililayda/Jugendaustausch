@@ -7,19 +7,13 @@ from flask import Flask, request
 
 email = "email"
 password = "password"
-name = "name"
-vorname = "vorname"
     
 app = Flask(__name__)
 
 @app.route("/post_field", methods=["POST"])
-def get_admin_data():
+def get_user_data():
     for key, value in request.form.items():
-            if key == "name":
-                name = value
-            elif key == "vorname":
-                vorname = value
-            elif key == "email":
+            if key == "email":
                     email = value
             elif key == "password":
                     password = value
@@ -35,11 +29,11 @@ def create_connection(db_file):
 
     return conn
 
-def insert_admin(conn, new_admin):
+def insert_admin(conn, new_user):
     
-    sql = "INSERT INTO admins(superadmin, email, password, name, vorname) VALUES(?, ?, ?, ?, ?); "
+    sql = "INSERT INTO users(email, password) VALUES(?, ?); "
     cur = conn.cursor()
-    cur.execute(sql, new_admin)
+    cur.execute(sql, new_user)
     conn.commit()
 
 def main():
@@ -49,8 +43,8 @@ def main():
     
     if conn is not None:
         with conn:
-            new_admin = (0, email, password, name, vorname)
-            insert_admin(conn, new_admin)
+            new_user = (email, password)
+            insert_admin(conn, new_user)
     else:
         print("Error! cannot create the database connection.")
 
