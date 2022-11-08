@@ -1,4 +1,5 @@
 import datetime
+import bcrypt
 import sqlite3
 from sqlite3 import Error
 import dates as dt
@@ -41,9 +42,12 @@ def main():
     
     conn = create_connection(database)
     
+    encoded_password = password.encode('utf-8')
+    hashed = bcrypt.hashpw(encoded_password, bcrypt.gensalt(10)) 
+    
     if conn is not None:
         with conn:
-            new_user = (email, password)
+            new_user = (email, hashed)
             insert_admin(conn, new_user)
     else:
         print("Error! cannot create the database connection.")
