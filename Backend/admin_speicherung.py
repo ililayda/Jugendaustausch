@@ -5,6 +5,8 @@ import dates as dt
 import flask
 from flask import Flask, request
 
+email = "email"
+password = "password"
 name = "name"
 vorname = "vorname"
     
@@ -17,6 +19,10 @@ def get_admin_data():
                 name = value
             elif key == "vorname":
                 vorname = value
+            elif key == "email":
+                email = value
+            elif key == "vorname":
+                password = value
 
 def create_connection(db_file):
 
@@ -31,7 +37,7 @@ def create_connection(db_file):
 
 def insert_admin(conn, new_admin):
 
-    sql = "INSERT INTO admins(name, vorname) VALUES(?, ?); "
+    sql = "INSERT INTO admins(email, password, name, vorname) VALUES(?, ?, ?, ?); "
     cur = conn.cursor()
     cur.execute(sql, new_admin)
     conn.commit()
@@ -43,7 +49,7 @@ def main():
     
     if conn is not None:
         with conn:
-            new_admin = (name, vorname)
+            new_admin = (email, password, name, vorname)
             insert_admin(conn, new_admin)
     else:
         print("Error! cannot create the database connection.")
