@@ -48,7 +48,7 @@ def insert_bar_payment(conn, payment):
     cur.execute(sql, payment)
     conn.commit()
 
-def main():
+def main(id):
     database = r"./austausch.db"
     
     conn = create_connection(database)
