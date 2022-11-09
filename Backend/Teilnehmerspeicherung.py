@@ -54,7 +54,7 @@ def insert_participant(conn, new_participant):
     cur.execute(sql, new_participant)
     conn.commit()
 
-def main():
+def main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email):
     database = r"./austausch.db"
     
     conn = create_connection(database)
