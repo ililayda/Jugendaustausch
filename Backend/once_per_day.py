@@ -1,4 +1,4 @@
-import schedule
+import schedule # "pip3 install schedule"
 import time
 import Neue_Tabellen as nt
 import loeschung as l
