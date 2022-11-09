@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Template</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <script src="https://use.fontawesome.com/0d58e1d1c0.js"></script>
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="../static/CSS/styles.css"/>
+
+    <!-- add icon link -->
+    <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+<section id="nav_menu-1" class="widget widget_nav_menu">
+    <div class="menu-dienstenavigation-container">
+        <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
+            <img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
+        </a>
+        <ul id="menu-dienstenavigation" class="rechts">
+            <li id="menu-item-stundenplan" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3118">
+                <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
+            </li>
+            <li id="menu-item-moodle" class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
+            </li>
+            <li id="menu-item-office" class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
+            </li>
+            <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
+                <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
+            <li id="menu-item-login" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Login</a>
+                <div class="dropdown-content">
+                    <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">Login</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+
+<div class="site-header-content">
+    <div class="site-header-inner">
+        <div id="site-navigation-container" class="main-navigation-container">
+
+        </div>
+    </div>
+</div>
+<div class="mid-part"></div>
+<div class="flex-center position-ref full-height">
+    <div class="container">
+
+
+    </div>
+</div>
+
+<div class="site-footer-content">
+    <div class="site-footer-inner">
+        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
+            <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+      (function($) {
+
+        this.logoutToken = '';
+
+        this.$ = $;
+        this.$('#login').click(() => {
+          this.$.ajax({
+            url: 'http://localhost:63342/Jugendaustausch/HTML/login.html?_ijt=t3v5bsad49gj8cj986gvkpja93&_ij_reload=RELOAD_ON_SAVE/login?_format=json',
+            method: 'POST',
+            data: JSON.stringify({
+              email: 'email',
+              password: 'password'
+            }),
+            contentType: 'application/json',
+            dataType: 'json',
+            /*xhrFields: {
+               withCredentials: true
+            }, */
+            crossDomain: true
+          })
+          .then(res => {
+            console.log('RES =>', res);
+            this.logoutToken = res.logout_token;
+          });
+        });
+
+        this.$('#logout').click(() => {
+          this.$.ajax({
+            url: `http://www.octo2.dev/d8_2_cors/user/logout?_format=json&token=${this.logoutToken}`,
+            method: 'POST',
+            xhrFields: {
+               withCredentials: true
+            },
+            crossDomain: true
+          })
+          .then(res => console.log(res + "no error"))
+          .catch(err => console.log(err));
+        });
+
+        this.$('#get-node-1').click(() => {
+          this.$.ajax({
+            url: `http://www.octo2.dev/d8_2_cors/node/1?_format=hal_json`,
+            method: 'GET',
+            xhrFields: {
+               withCredentials: true
+            },
+            crossDomain: true
+          })
+          .then(res => console.log(res ))
+          .catch(err => console.log(err));
+        });
+
+      })(window.$);
+    </script>
+
+</body>
