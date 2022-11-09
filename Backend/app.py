@@ -29,7 +29,7 @@ def login():
     passwordDB = lg.give_password(request.form['password'])
 
     # Use conditions to compare the authenticating password with the stored one:
-    passwordDB = check.encode('utf-8')
+    passwordForm = passwordForm.encode('utf-8')
 
     if bcrypt.checkpw(passwordForm, passwordDB):
         print("password matches")
@@ -38,7 +38,7 @@ def login():
         print("incorrect password")
 
 
-    if pw = True and request.form['email'] == email:
+    if pw == True and request.form['email'] == email:
         session['logged_in'] = True
     else:
         flash('Falsche Anmeldedaten!')

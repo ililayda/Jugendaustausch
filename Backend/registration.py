@@ -25,7 +25,7 @@ def insert_user(conn, email, password):
     result = cur.execute('SELECT * FROM users')
     conn.commit()
 
-    print(cur.lastrowemail)
+    print(cur.lastrowemail, cur.lastrowpassword)
 
 def main(email, password):
 
