@@ -241,6 +241,7 @@ li.dropdown {
 /* CONTENT */
 .container {
   padding: 16px;
+  margin: 5px;
   background-color: white;
   text-align: center;
 }
