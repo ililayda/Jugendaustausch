@@ -30,7 +30,7 @@ def get_participants(conn, participants, one=False):
                for i, value in enumerate(row)) for row in cur.fetchall()]
     return (r[0] if r else None) if one else r
 
-def main():
+def main(nachname):
     if os.path.exists("suchergebnis.json"):
       os.remove("suchergebnis.json")
     database = r"./austausch.db"
