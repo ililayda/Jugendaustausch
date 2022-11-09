@@ -1,26 +1,14 @@
 import datetime
-import bcrypt
+import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
 import sqlite3
 from sqlite3 import Error
 import dates as dt
 import flask
 from flask import Flask, request
 
-email = "email"
-password = "password"
-    
 app = Flask(__name__)
 
-@app.route("/post_field", methods=["POST"])
-def get_user_data():
-    for key, value in request.form.items():
-            if key == "email":
-                    email = value
-            elif key == "password":
-                    password = value
-
 def create_connection(db_file):
-
     conn = None
     try:
         conn = sqlite3.connect(db_file)
@@ -30,14 +18,14 @@ def create_connection(db_file):
 
     return conn
 
-def insert_admin(conn, new_user):
+def insert_user(conn, new_user):
     
     sql = "INSERT INTO users(email, password) VALUES(?, ?); "
     cur = conn.cursor()
     cur.execute(sql, new_user)
     conn.commit()
 
-def main():
+def main(email, password):
     database = r"./austausch.db"
     
     conn = create_connection(database)
@@ -48,7 +36,7 @@ def main():
     if conn is not None:
         with conn:
             new_user = (email, hashed)
-            insert_admin(conn, new_user)
+            insert_user(conn, new_user)
     else:
         print("Error! cannot create the database connection.")
 
