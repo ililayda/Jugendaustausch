@@ -42,7 +42,7 @@ def insert_admin(conn, new_admin):
     cur.execute(sql, new_admin)
     conn.commit()
 
-def main():
+def main(email, password, name, vorname):
     database = r"./austausch.db"
     
     conn = create_connection(database)
