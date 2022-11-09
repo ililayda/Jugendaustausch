@@ -1,5 +1,5 @@
 import datetime
-import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
+import bcrypt # CMD: "pip3 install bcrypt"
 import sqlite3
 from sqlite3 import Error
 import dates as dt
