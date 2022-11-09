@@ -145,12 +145,12 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
 /* NAV BAR */
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: auto ;
     padding: 0;
     overflow: hidden;
-    text-align: left;
-    height: 70px;
-    width: 88%;
+    text-align: center;
+    height: 50px;
+    width: 50%;
     color: black !important;
 }
 
