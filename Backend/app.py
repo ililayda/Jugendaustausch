@@ -31,7 +31,7 @@ def login():
     # Use conditions to compare the authenticating password with the stored one:
     passwordDB = check.encode('utf-8')
 
-    if bcrypt.checkpw(passwordDB, hashed):
+    if bcrypt.checkpw(passwordForm, passwordDB):
         print("password matches")
         pw = True
     else:
