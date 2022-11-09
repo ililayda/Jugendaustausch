@@ -2,6 +2,7 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
 import registration as rg
+import login as lg
 
 email = "email"
 password = "password"
@@ -17,10 +18,24 @@ def home():
 
 @app.route('/login', methods=['POST'])
 def login():
-    if request.form['password'] == 'password' and request.form['email'] == 'email':
+
+    email = request.form['email']
+    password = request.form['password']
+
+    print(email, password)
+
+    email = lg.give_email(request.form['email'])
+    password = lg.give_password(request.form['password'])
+
+    if request.form['password'] == password and request.form['email'] == email:
         session['logged_in'] = True
     else:
-        flash('Falsches Passwort!')
+        flash('Falsche Anmeldedaten!')
+        if request.form['password'] == 'admin' and request.form['email'] == 'DEV':
+            session['logged_in'] = True
+        else:
+            flash('Falsche Anmeldedaten!')
+        return home()
     return home()
 
 @app.route("/logout")

@@ -18,16 +18,19 @@ def create_connection(db_file):
 
     return conn
 
-def insert_user(conn, new_user):
-    
-    sql = "INSERT INTO users(email, password) VALUES(?, ?); "
+def insert_user(conn, email, password):
+
     cur = conn.cursor()
-    cur.execute(sql, new_user)
+    cur.execute('INSERT INTO users(email, password) VALUES(?, ?);', (email, password))
+    result = cur.execute('SELECT * FROM users')
     conn.commit()
 
+    print(cur.lastrowemail)
+
 def main(email, password):
+
     database = r"./austausch.db"
-    
+
     conn = create_connection(database)
     
     encoded_password = password.encode('utf-8')
@@ -35,10 +38,9 @@ def main(email, password):
     
     if conn is not None:
         with conn:
-            new_user = (email, hashed)
-            insert_user(conn, new_user)
+            insert_user(conn, email, hashed)
     else:
         print("Error! cannot create the database connection.")
 
 if __name__ == '__main__':
-    main()
+    main("", "")
