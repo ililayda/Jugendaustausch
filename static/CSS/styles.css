@@ -149,8 +149,8 @@ ul {
     padding: 0;
     overflow: hidden;
     text-align: center;
-    height: 50px;
-    width: 50%;
+    height: 65px;
+    width: 88%;
     color: black !important;
 }
 
@@ -202,7 +202,7 @@ li.dropdown {
 .rechts {
     display: flex;
     justify-content: right;
-    align-items: right;
+    text-align: right;
 }
 
 .menu-dienstenavigation-container {
@@ -229,7 +229,8 @@ li.dropdown {
     position: relative;
     align-items: center;
     width: 88%;
-    margin: 0 auto;
+    height: 60px;
+    margin: 0 ;
 }
 
 /* <HEADER CONTENT> */
@@ -251,21 +252,19 @@ li.dropdown {
 
 .admin-links {
     color: #0000 !important;
-    padding: 0 3px;
+    padding: 0 5px;
     font-size: 20px;
     font-weight: 600;
-    text-align: center;
+    text-align: right;
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
 }
 .admin-container {
-     padding: 16px;
-     align: center;
-      margin: 5px;
-      background-color: white
-      color: black !important;
-      text-align: center;
+    padding: 50px 10px;
+    margin: 10px 250px;
+    width: 1000px;
+    text-align: center;
 }
 .full-height {
   height: 100vh;
