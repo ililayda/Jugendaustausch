@@ -15,8 +15,8 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="../static/CSS/styles.css"/>
 
-    <!-- Function Password Confirm check -->
-    <script type="text/javascript" src="./JSON/function.js"></script>
+    <!-- Function JSON-->
+    <script src="JSON/function.js"></script>
 
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
@@ -65,16 +65,14 @@
         <form action="/post_field" method="post">
         <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
         <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
-
         <label for="inputpassword"><i class="fa fa-key icon"> Passwort </i>
             <input autocomplete="inputpassword" class="form-control" id="inputpassword" name="password" placeholder="Password eintragen" required type="password">
         </label>
-            <input autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password">
-            <span id='message'></span>
-
+            <input onkeyup="check()" onchange="btn_disable()" autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password">
+            <span id="pwmessage"></span>
 
         <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
-        <button onclick="location.href='index.html';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
+        <button id="rgsbutton" onclick="location.href='index.html';" class="registerbtn btn btn-lg btn-primary" type="submit">Registrieren
         </button>
         <button onclick="location.href='login.html';" class="registerbtn btn btn-rg btn-primary" type="submit">
             Zurück zum Login
@@ -89,5 +87,6 @@
             <a target="_blank" href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
     </div>
 </div>
-</body>
 
+</body>
+</html>

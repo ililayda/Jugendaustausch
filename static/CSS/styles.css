@@ -59,8 +59,8 @@ hr {
 
 .links > a {
   color: #c6d0d4;
-  padding: 0 25px;
-  font-size: 15px;
+  padding: 0 20px;
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: .1rem;
   text-decoration: none;
@@ -97,7 +97,7 @@ input[type=text]:focus, input[type=password]:focus, input[type=number]:focus {
   width: 100%;
   opacity: 0.9;
   margin-top: 11px;
-  max-width: 600px;
+  max-width: 280px;
   max-height: 42px;
   text-decoration: none !important;
 }
@@ -148,15 +148,17 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    text-align: right;
+    text-align: left;
     height: 70px;
     width: 88%;
+    color: black !important;
 }
 
 li {
   float: left;
   text-align: right;
   font-size: 0.905em
+  list-style: none;
 }
 
 li a, .dropbt{
@@ -167,6 +169,7 @@ li a, .dropbt{
     padding: 22px 16px;
     background-color: #5b9bd5;
     text-decoration: none;
+    list-style: none;
 }
 
 li a:hover:not(.active), .dropdown:hover .dropbtn {
@@ -216,8 +219,8 @@ li.dropdown {
 }
 .site-header-content {
     background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 60px;
     position: relative;
     align-items: center;
 }
@@ -245,6 +248,25 @@ li.dropdown {
   background-color: white;
   text-align: center;
 }
+
+.admin-links {
+    color: #0000 !important;
+    padding: 0 3px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: .1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.admin-container {
+     padding: 16px;
+     align: center;
+      margin: 5px;
+      background-color: white
+      color: black !important;
+      text-align: center;
+}
 .full-height {
   height: 100vh;
 }
@@ -269,8 +291,8 @@ li.dropdown {
 
 .site-footer-content {
     background-color: white;
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     position: relative;
     align-items: center;
 }
