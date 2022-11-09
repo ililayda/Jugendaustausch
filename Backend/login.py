@@ -18,20 +18,20 @@ def create_connection(db_file):
 
     return conn
 
-def check_email(conn, email):
+def get_email(conn, email):
 
     cur = conn.cursor()
-    cur.execute('SELECT * email FROM users WHERE email = ?;', email)
+    cur.execute('SELECT email FROM users WHERE email = ?;', (email,))
     email = cur.fetchone()
 
     print(email)
 
     return email
 
-def check_password(conn, password):
+def get_password(conn, password):
 
     cur = conn.cursor()
-    cur.execute('SELECT password FROM users WHERE password = ?;', password)
+    cur.execute('SELECT password FROM users WHERE password = ?;', (password,))
     password = cur.fetchone()
 
     print(password)
@@ -45,7 +45,7 @@ def give_email(email):
 
     if conn is not None:
         with conn:
-            return check_email(conn, email)
+            return get_email(conn, email)
     else:
         print("Error! cannot check the database connection.")
 
@@ -56,7 +56,7 @@ def give_password(password):
 
     if conn is not None:
         with conn:
-            return check_password(conn, password)
+            return get_password(conn, password)
     else:
         print("Error! cannot check the database connection.")
 

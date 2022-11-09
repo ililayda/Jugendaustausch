@@ -19,15 +19,26 @@ def home():
 @app.route('/login', methods=['POST'])
 def login():
 
-    email = request.form['email']
-    password = request.form['password']
+    pw = False
 
+    emailForm = request.form['email']
+    passwordForm = request.form['password']
     print(email, password)
 
-    email = lg.give_email(request.form['email'])
-    password = lg.give_password(request.form['password'])
+    emailDB = lg.give_email(request.form['email'])
+    passwordDB = lg.give_password(request.form['password'])
 
-    if request.form['password'] == password and request.form['email'] == email:
+    # Use conditions to compare the authenticating password with the stored one:
+    passwordDB = check.encode('utf-8')
+
+    if bcrypt.checkpw(passwordDB, hashed):
+        print("password matches")
+        pw = True
+    else:
+        print("incorrect password")
+
+
+    if pw = True and request.form['email'] == email:
         session['logged_in'] = True
     else:
         flash('Falsche Anmeldedaten!')
