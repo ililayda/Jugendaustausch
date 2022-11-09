@@ -23,10 +23,11 @@ def login():
 
     emailForm = request.form['email']
     passwordForm = request.form['password']
-    print(email, password)
+    print(emailForm, passwordForm)
 
     emailDB = lg.give_email(request.form['email'])
     passwordDB = lg.give_password(request.form['password'])
+    print(emailDB, passwordDB)
 
     # Use conditions to compare the authenticating password with the stored one:
     passwordForm = passwordForm.encode('utf-8')
