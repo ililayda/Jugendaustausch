@@ -5,10 +5,6 @@ import sqlite3
 from sqlite3 import Error
 import dates as dt
 
-nachname = "nachname"
-vorname = "vorname"
-klasse = "klasse"
-
 def create_connection(db_file):
 
     conn = None
