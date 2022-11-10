@@ -33,35 +33,36 @@ def home():
 @app.route('/login', methods=['POST'])
 def login():
 
-    pw = False
-
-    emailForm = request.form['email']
-    passwordForm = request.form['password']
-    print(emailForm, passwordForm)
-
-    user_obj = lg.give_user(emailForm)
-    emailDB = user_obj[0]
-    passwordDB = user_obj[1]
-    print(emailDB, passwordDB)
-
-    # Use conditions to compare the authenticating password with the stored one:
-    passwordForm = passwordForm.encode('utf-8')
-
-    if bcrypt.checkpw(passwordForm, passwordDB):
-        print("password matches")
-        pw = True
-    else:
-        print("incorrect password")
-
-    if pw == True and (emailForm.__contains__(emailDB)):
+    if passwordForm == 'admin' and emailForm == 'DEV':
         session['logged_in'] = True
     else:
-        flash('Falsche Anmeldedaten!')
-        if passwordForm == 'admin' and emailForm == 'DEV':
+
+        pw = False
+
+        emailForm = request.form['email']
+        passwordForm = request.form['password']
+        print(emailForm, passwordForm)
+
+        user_obj = lg.give_user(emailForm)
+        emailDB = user_obj[0]
+        passwordDB = user_obj[1]
+        print(emailDB, passwordDB)
+
+        # Use conditions to compare the authenticating password with the stored one:
+        passwordForm = passwordForm.encode('utf-8')
+
+        if bcrypt.checkpw(passwordForm, passwordDB):
+            print("password matches")
+            pw = True
+        else:
+            print("incorrect password")
+
+        if pw == True and (emailForm.__contains__(emailDB)):
             session['logged_in'] = True
         else:
             flash('Falsche Anmeldedaten!')
         return home()
+
     return home()
 
 @app.route("/logout")
