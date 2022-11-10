@@ -39,8 +39,9 @@ def login():
     passwordForm = request.form['password']
     print(emailForm, passwordForm)
 
-    emailDB = lg.give_email(request.form['email'])
-    passwordDB = lg.give_password(request.form['password'])
+    user_obj = lg.give_user(emailForm)
+    emailDB = getattr(user_obj, 'email')
+    passwordDB = getattr(user_obj, 'password')
     print(emailDB, passwordDB)
 
     # Use conditions to compare the authenticating password with the stored one:
@@ -53,11 +54,11 @@ def login():
         print("incorrect password")
 
 
-    if pw == True and request.form['email'] == email:
+    if pw == True and (emailForm.__contains__(emailDB)):
         session['logged_in'] = True
     else:
         flash('Falsche Anmeldedaten!')
-        if request.form['password'] == 'admin' and request.form['email'] == 'DEV':
+        if passwordForm == 'admin' and emailForm == 'DEV':
             session['logged_in'] = True
         else:
             flash('Falsche Anmeldedaten!')
