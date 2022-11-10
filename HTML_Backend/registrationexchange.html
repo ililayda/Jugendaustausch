@@ -44,7 +44,7 @@
                 <div class="dropdown-content">
                     <a href="{{ url_for( 'login' ) }}">Login</a>
                     <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
-                    <a href="{{ url_for( 'get_admin_data' ) }}">Admin Login</a>
+                    <a href="{{ url_for( 'adminlogin' ) }}">Admin Login</a>
                 </div>
             </li>
         </ul>
@@ -68,10 +68,10 @@
             <p><i>gib deine korrekten Daten an, um dich für den Austausch anmelden zu können. </i></p>
 
             <label for="anrede"><i class="fa icon"> Anrede </i></label>
-            <select id="anrede" name="anrede" autofocus class="form-control" required>
+            <select id="anrede" name="anrede" class="form-control" required>
                 <option value="Frau">Frau</option>
                 <option value="Herr">Herr</option>
-                <option value="none">Unbestimmt</option>
+                <option value="None">Unbestimmt</option>
             </select>
 
             <label for="name"><i class="fa icon"> Vorname </i></label>

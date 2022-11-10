@@ -96,6 +96,10 @@ def get_user_data():
     rg.main(email, password)
     return render_template('login.html')
 
+@app.route("/adminlogin") #admin login html
+def adminlogin():
+    return render_template('admin_login.html')
+
 @app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
 def get_admin_data():
     render_template('admin_login.html')
@@ -139,7 +143,6 @@ def get_participant_data():
             elif key == "email":
                 email = value
     ts.main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email)
-
 
 @app.route("/get_field_user", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():
