@@ -11,3 +11,10 @@ function check()
     document.getElementById('pwmessage').innerHTML = 'not matching';
   }
 }
+
+function created()
+{
+    document.getElementById('created').style.color = 'green';
+    document.getElementById('created').innerHTML = 'Admin angelegt';
+    document.getElementById('created').style.border = '1px solid green';
+}
