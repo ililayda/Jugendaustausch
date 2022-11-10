@@ -18,45 +18,36 @@ def create_connection(db_file):
 
     return conn
 
-def get_email(conn, email):
-
-    cur = conn.cursor()
-    cur.execute('SELECT email FROM users WHERE email = ?;', (email,))
-    email = cur.fetchone()
+def get_user(conn, email):
 
     print(email)
-
-    return email
-
-def get_password(conn, password):
-
     cur = conn.cursor()
-    cur.execute('SELECT password FROM users WHERE password = ?;', (password,))
-    password = cur.fetchone()
+    sql = 'SELECT email, password FROM users WHERE email = ?;'
+    cur.execute(sql, (email,))
 
+    email = cur.fetchone()[0]
+    password = cur.fetchone()[1]
+
+    print(email)
     print(password)
+    conn.commit()
 
-    return password
-
-def give_email(email):
-    database = r"./austausch.db"
-
-    conn = create_connection(database)
-
-    if conn is not None:
-        with conn:
-            return get_email(conn, email)
+    if not password:  # An empty result evaluates to False.
+        print("Login failed")
     else:
-        print("Error! cannot check the database connection.")
+        print("Welcome")
+        user_obj = (email, password)
+        return user_obj
 
-def give_password(password):
+
+def give_user(email):
     database = r"./austausch.db"
 
     conn = create_connection(database)
 
     if conn is not None:
         with conn:
-            return get_password(conn, password)
+            return get_user(conn, email)
     else:
         print("Error! cannot check the database connection.")
 

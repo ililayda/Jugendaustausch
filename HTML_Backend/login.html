@@ -24,7 +24,6 @@
 <section id="nav_menu-1" class="widget widget_nav_menu">
 	<div class="menu-dienstenavigation-container">
 		<a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
-			<img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
 		</a>
 		<ul id="menu-dienstenavigation" class="rechts">
 			<li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
@@ -41,14 +40,21 @@
 			<li id="menu-item-home" class="rechts">
 				<a href="index.html">Startseite</a>
 			</li>
-			<li id="menu-item-login" class="rechts">
-				<a href="login.html">Login</a>
+			<li id="menu-item-login" class="dropdown">
+				<a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+				<div class="dropdown-content">
+					<a  href="login.html">Login</a>
+					<a   href="registration.html">Registrieren</a>
+					<a   href="adminlogin.html">Admin Login</a>
+				</div>
 			</li>
 		</ul>
 	</div>
 </section>
 
 <div class="site-header-content">
+	<img align="left" width="250" height="90" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
+	<img align="right" src="../static/DPJW.jpg" width="250" height="90">
 	<div class="site-header-inner">
 		<div id="site-navigation-container" class="main-navigation-container">
 		</div>
@@ -58,22 +64,14 @@
 <div class="flex-center position-ref full-height">
 	<div class="container">
 
-		<img src="../static/DPJW.jpg" width="550" height="180">
-
 		<form method="post" action="/login">
-		<h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
+			<h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
 		<p><i>Du musst dich einloggen, um die Website richtig nutzen zu können. </i></p>
 
 		<label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
 		<input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
 		<label for="password"><i class="fa fa-key icon"> Passwort </i></label>
 		<input autocomplete="current-password" class="form-control" id="password" name="password" placeholder="Passwort eintragen" required type="password">
-
-			<div class="checkbox mb-3">
-			<label>
-				<input name="_remember_me" type="checkbox"> Angemeldet bleiben
-			</label>
-		</div>
 
 		<p> Mit dem Einloggen akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
 		<button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
