@@ -30,7 +30,7 @@ def get_user(conn, email):
         with con:
             cur.execute(sql, (email,))
     except sqlite3.IntegrityError:
-    print("couldn't add Python twice")
+        print("couldn't add Python twice")
 
     email = cur.fetchone()[0]
     password = cur.fetchone()[1]

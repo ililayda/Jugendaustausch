@@ -141,7 +141,7 @@ def get_id_for_online_payment():
     for key, value in request.form.items():
             if key == "id":
                 id = value
-     po.main(id)
+    po.main(id)
     
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
