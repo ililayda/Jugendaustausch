@@ -249,20 +249,30 @@ li.dropdown {
   background-color: white;
   text-align: center;
 }
+.admin-container{
+     background-color: white;
+}
+.flex-admin-center {
+  align-items: start;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  }
 
-.admin-links {
+.nav-links {
     color: #0000 !important;
     padding: 0 5px;
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
     text-align: right;
     letter-spacing: .1rem;
     text-decoration: none;
     text-transform: uppercase;
 }
-.admin-container {
-    padding: 50px 10px;
-    margin: 10px 250px;
+
+.nav-header {
+    padding: 0;
+    margin: 1px 250px;
     width: 1000px;
     text-align: center;
 }
@@ -270,7 +280,7 @@ li.dropdown {
   height: 100vh;
 }
 .flex-center {
-  align-items: center;
+  align-items: start;
   display: flex;
   justify-content: center;
   background-color: white;
