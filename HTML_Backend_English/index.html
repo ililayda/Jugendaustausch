@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jugendaustausch </title>
+    <title>youth exchange </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -27,10 +27,10 @@
         </a>
         <ul id="menu-dienstenavigation" class="rechts">
             <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
+                <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">to GSO</a>
             </li>
             <li id="menu-item-out" class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">GSO Dienste</a>
+                <a href="javascript:void(0)" class="dropbtn">GSO Services</a>
                 <div class="dropdown-content">
                     <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
                     <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
@@ -38,13 +38,13 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="{{ url_for( 'homepage' ) }}">Startseite</a>
+                <a href="{{ url_for( 'homepage' ) }}">Homepage</a>
             </li>
             <li id="menu-item-login" class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+                <a href="javascript:void(0)" class="dropbtn">Login</a>
                 <div class="dropdown-content">
                     <a href="{{ url_for( 'login' ) }}">Login</a>
-                    <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+                    <a href="{{ url_for( 'registration' ) }}">Register</a>
                     <a href="{{ url_for( 'adminlogin' ) }}">Admin Login</a>
                 </div>
             </li>
@@ -64,16 +64,16 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
 
-        <h1 class="site-title site-title-text">Willkommen auf der Startseite des Jugendaustausch</h1>
-        hier kannst Du dich <a href="{{ url_for( 'homepage' ) }}">einloggen</a>
+        <h1 class="site-title site-title-text">Welcome to the homepage of the youth exchange</h1>
+        hier kannst Du dich <a href="{{ url_for( 'homepage' ) }}">log in</a>
 
     </div>
 </div>
 
 <div class="site-footer-content">
     <div class="site-footer-inner">
-        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
-            <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Privacy Policy </a>
+            <a href="https://www.gso-koeln.de/impressum/"> Imprint </a></p>
     </div>
 </div>
 </body>
