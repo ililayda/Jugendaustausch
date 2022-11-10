@@ -68,10 +68,10 @@
         <p><i> You need to register to be able to log in. </i></p>
 
         <form action="/post_field_reg_user" method="post">
-        <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
+        <label for="email"><i class="fa fa-envelope icon"> Email </i></label>
         <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="Insert your email" required type="text">
 
-        <label for="inputpassword"><i class="fa fa-key icon"> Passwort </i>
+        <label for="inputpassword"><i class="fa fa-key icon"> Password </i>
             <input autocomplete="inputpassword" class="form-control" id="inputpassword" name="password" placeholder="Insert your password" required type="password">
         </label>
             <input autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Repeat your password" required type="password">
@@ -81,7 +81,7 @@
         <button onclick="location.href='{{ url_for( 'get_user_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Register
         </button>
         <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-rg btn-primary">
-            Zurück zum Login
+            Back to Login
         </button>
     </form>
     </div>
