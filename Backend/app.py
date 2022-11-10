@@ -2,10 +2,13 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
 import registration as rg
+import admin_speicherung as ads
 import login as lg
 
 email = "email"
 password = "password"
+name = "name"
+vorname = "vorname"
 
 app = Flask(__name__, template_folder='../HTML_Backend', static_folder='../static')
 
@@ -68,6 +71,19 @@ def get_user_data():
             password = value
     rg.main(email, password)
     return render_template('login.html')
+
+@app.route("/post_field", methods=["POST"]) #admin_speicherung
+def get_admin_data():
+    for key, value in request.form.items():
+            if key == "name":
+                name = value
+            elif key == "vorname":
+                vorname = value
+            elif key == "email":
+                    email = value
+            elif key == "vorname":
+                    password = value
+    ads.main(name, vorname, email, password)
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
