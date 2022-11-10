@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrieren </title>
+    <title>Registration </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -15,17 +15,15 @@
     <!-- Styles -->
     <link rel="stylesheet" type="text/css" href="../static/CSS/styles.css"/>
 
-    <!-- Function Password Confirm check -->
-    <script type="text/javascript" src="./JSON/function.js"></script>
-
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+
 </head>
+
 <body>
 <section id="nav_menu-1" class="widget widget_nav_menu">
     <div class="menu-dienstenavigation-container">
         <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
-            <img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
         </a>
         <ul id="menu-dienstenavigation" class="rechts">
             <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
@@ -42,13 +40,21 @@
             <li id="menu-item-home" class="rechts">
                 <a href="index.html">Startseite</a>
             </li>
-            <li id="menu-item-login" class="rechts">
-                <a href="login.html">Login</a>
+            <li id="menu-item-login" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+                <div class="dropdown-content">
+                    <a  href="login.html">Login</a>
+                    <a   href="registration.html">Registrieren</a>
+                    <a   href="adminlogin.html">Admin Login</a>
+                </div>
             </li>
         </ul>
     </div>
 </section>
+
 <div class="site-header-content">
+    <img align="left" width="250" height="90" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
+    <img align="right" src="../static/DPJW.jpg" width="250" height="90">
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
         </div>
@@ -62,7 +68,7 @@
         <h1 class="h3 mb-3 font-weight-normal">Registrieren</h1>
         <p><i> Du musst dich registrieren, um dich einloggen zu können. </i></p>
 
-        <form action="/post_field" method="post">
+        <form action="/post_field_reg_user" method="post">
         <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
         <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
 
@@ -72,11 +78,10 @@
             <input autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password">
             <span id='message'></span>
 
-
         <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
-        <button onclick="location.href='index.html';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
+        <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
         </button>
-        <button onclick="location.href='login.html';" class="registerbtn btn btn-rg btn-primary" type="submit">
+        <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-rg btn-primary">
             Zurück zum Login
         </button>
 

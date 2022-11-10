@@ -40,8 +40,8 @@ def login():
     print(emailForm, passwordForm)
 
     user_obj = lg.give_user(emailForm)
-    emailDB = getattr(user_obj, 'email')
-    passwordDB = getattr(user_obj, 'password')
+    emailDB = user_obj[0]
+    passwordDB = user_obj[1]
     print(emailDB, passwordDB)
 
     # Use conditions to compare the authenticating password with the stored one:
@@ -52,7 +52,6 @@ def login():
         pw = True
     else:
         print("incorrect password")
-
 
     if pw == True and (emailForm.__contains__(emailDB)):
         session['logged_in'] = True
@@ -74,7 +73,7 @@ def logout():
 def registration():
     return render_template('registration.html')
 
-@app.route("/post_field", methods=["POST"])
+@app.route("/post_field_reg_user", methods=["POST"])
 def get_user_data():
     for key, value in request.form.items():
         if key == "email":
@@ -84,7 +83,7 @@ def get_user_data():
     rg.main(email, password)
     return render_template('login.html')
 
-@app.route("/post_field", methods=["POST"]) #admin_speicherung
+@app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
 def get_admin_data():
     for key, value in request.form.items():
             if key == "name":
@@ -97,7 +96,7 @@ def get_admin_data():
                     password = value
     ads.main(name, vorname, email, password)
     
-@app.route("/post_field", methods=["POST"]) #Teilnahme-Formular
+@app.route("/post_field_reg_au", methods=["POST"]) #Teilnahme-Formular
 def get_participant_data():
     for key, value in request.form.items():
             if key == "name":
@@ -119,25 +118,25 @@ def get_participant_data():
     ts.main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email)
 
     
-@app.route("/get_field", methods=["GET"]) #teilnehmerliste ausgeben
+@app.route("/get_field_user", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():
    ag.main()   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
 
-@app.route("/post_field", methods=["POST"]) #suche nach teilnehmern
+@app.route("/post_field_user_search", methods=["POST"]) #suche nach teilnehmern
 def get_search_():
     for key, value in request.form.items():
             if key == "name":
                 name = value
     se.main(name) #erstellt die Datei suchergebnis.json, die muss ausgelesen werden
 
-@app.route("/post_field", methods=["POST"]) #bestätigung der bar zahlung
+@app.route("/post_field_cash", methods=["POST"]) #bestätigung der bar zahlung
 def get_id_for_bar_payment():
     for key, value in request.form.items():
             if key == "id":
                 id = value
     pb.main(id)
 
-@app.route("/post_field", methods=["POST"]) #bestätigung der online zahlung
+@app.route("/post_field_cash_on", methods=["POST"]) #bestätigung der online zahlung
 def get_id_for_online_payment():
     for key, value in request.form.items():
             if key == "id":

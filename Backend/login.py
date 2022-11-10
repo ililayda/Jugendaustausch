@@ -20,19 +20,32 @@ def create_connection(db_file):
 
 def get_user(conn, email):
 
-    cur = conn.cursor()
+    print(email)
 
-    emailS = cur.execute('SELECT email FROM users WHERE email = ?;', (email,))
-    email = cur.fetchone(emailS)
-    passwordS = cur.execute('SELECT password FROM users WHERE email = ?;', (email,))
-    password = cur.fetchone(passwordS)
+
+    cur = conn.cursor()
+    sql = 'SELECT email, password FROM users WHERE email = ?;'
+
+    try:
+        with con:
+            cur.execute(sql, (email,))
+    except sqlite3.IntegrityError:
+    print("couldn't add Python twice")
+
+    email = cur.fetchone()[0]
+    password = cur.fetchone()[1]
+
+    print(email)
+    print(password)
     conn.commit()
 
-    print(email, password)
+    if not password:  # An empty result evaluates to False.
+        print("Login failed")
+    else:
+        print("Welcome")
+        user_obj = (email, password)
+        return user_obj
 
-    user_obj = (email, password)
-
-    return user_obj
 
 def give_user(email):
     database = r"./austausch.db"

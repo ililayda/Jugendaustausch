@@ -3,13 +3,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Template</title>
+    <title>Login </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Calibri:200,600" rel="stylesheet">
     <script src="https://use.fontawesome.com/0d58e1d1c0.js"></script>
 
     <!-- Styles -->
@@ -17,32 +17,35 @@
 
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
+
 </head>
 
 <body>
 <section id="nav_menu-1" class="widget widget_nav_menu">
     <div class="menu-dienstenavigation-container">
         <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
-            <img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
         </a>
         <ul id="menu-dienstenavigation" class="rechts">
-            <li id="menu-item-stundenplan" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3118">
-                <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
-            </li>
-            <li id="menu-item-moodle" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
-            </li>
-            <li id="menu-item-office" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
-            </li>
             <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
                 <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
-            <li id="menu-item-login" class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Login</a>
+            </li>
+            <li id="menu-item-out" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">GSO Dienste</a>
                 <div class="dropdown-content">
-                    <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">Login</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+                    <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
+                    <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
+                    <a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
+                </div>
+            </li>
+            <li id="menu-item-home" class="rechts">
+                <a href="index.html">Startseite</a>
+            </li>
+            <li id="menu-item-login" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+                <div class="dropdown-content">
+                    <a  href="login.html">Login</a>
+                    <a   href="registration.html">Registrieren</a>
+                    <a   href="adminlogin.html">Admin Login</a>
                 </div>
             </li>
         </ul>
@@ -50,9 +53,10 @@
 </section>
 
 <div class="site-header-content">
+    <img align="left" width="250" height="90" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
+    <img align="right" src="../static/DPJW.jpg" width="250" height="90">
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
-
         </div>
     </div>
 </div>
