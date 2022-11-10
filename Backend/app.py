@@ -18,7 +18,7 @@ vorname = "vorname"
 klasse = "klasse"
 klassenleitung = "klassenleitung"
 volljährig = 1
-mobilfunknummer "nr"
+mobilfunknummer = "nr"
 id = 1
 
 app = Flask(__name__, template_folder='../HTML_Backend', static_folder='../static')
