@@ -2,10 +2,24 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
 import registration as rg
+import admin_speicherung as ads
 import login as lg
+import Ausgabe as ag
+import search as se
+import Teilnehmerspeicherung as ts
+import payment_bar as pb
+import payment_online as po
 
 email = "email"
 password = "password"
+anrede = "anrede"
+name = "name"
+vorname = "vorname"
+klasse = "klasse"
+klassenleitung = "klassenleitung"
+volljährig = 1
+mobilfunknummer "nr"
+id = 1
 
 app = Flask(__name__, template_folder='../HTML_Backend', static_folder='../static')
 
@@ -69,6 +83,66 @@ def get_user_data():
     rg.main(email, password)
     return render_template('login.html')
 
+@app.route("/post_field", methods=["POST"]) #admin_speicherung
+def get_admin_data():
+    for key, value in request.form.items():
+            if key == "name":
+                name = value
+            elif key == "vorname":
+                vorname = value
+            elif key == "email":
+                    email = value
+            elif key == "vorname":
+                    password = value
+    ads.main(name, vorname, email, password)
+    
+@app.route("/post_field", methods=["POST"]) #Teilnahme-Formular
+def get_participant_data():
+    for key, value in request.form.items():
+            if key == "name":
+                name = value
+            elif key == "vorname":
+                vorname = value
+            elif key == "anrede":
+                anrede = value
+            elif key == "klasse":
+                klasse = value
+            elif key == "klassenleitung":
+                klassenleitung = value
+            elif key == "mobilfunknummer":
+                mobilfunknummer = value
+            elif key == "volljährig":
+                volljährig = value
+            elif key == "email":
+                email = value
+    ts.main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email)
+
+    
+@app.route("/get_field", methods=["GET"]) #teilnehmerliste ausgeben
+def get_all_participants():
+   ag.main()   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
+
+@app.route("/post_field", methods=["POST"]) #suche nach teilnehmern
+def get_search_():
+    for key, value in request.form.items():
+            if key == "name":
+                name = value
+    se.main(name) #erstellt die Datei suchergebnis.json, die muss ausgelesen werden
+
+@app.route("/post_field", methods=["POST"]) #bestätigung der bar zahlung
+def get_id_for_bar_payment():
+    for key, value in request.form.items():
+            if key == "id":
+                id = value
+    pb.main(id)
+
+@app.route("/post_field", methods=["POST"]) #bestätigung der online zahlung
+def get_id_for_online_payment():
+    for key, value in request.form.items():
+            if key == "id":
+                id = value
+     po.main(id)
+    
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
 app.run(debug=True,host='0.0.0.0', port=4000)

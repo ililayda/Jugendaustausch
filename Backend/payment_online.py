@@ -5,16 +5,6 @@ import dates as dt
 import flask
 from flask import Flask, request
 
-id = 3
-    
-app = Flask(__name__)
-
-@app.route("/post_field", methods=["POST"])
-def get_id():
-    for key, value in request.form.items():
-            if key == "id":
-                id = value
-
 def create_connection(db_file):
 
     conn = None

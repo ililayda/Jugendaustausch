@@ -5,25 +5,6 @@ import dates as dt
 import flask
 from flask import Flask, request
 
-email = "email"
-password = "password"
-name = "name"
-vorname = "vorname"
-    
-app = Flask(__name__)
-
-@app.route("/post_field", methods=["POST"])
-def get_admin_data():
-    for key, value in request.form.items():
-            if key == "name":
-                name = value
-            elif key == "vorname":
-                vorname = value
-            elif key == "email":
-                email = value
-            elif key == "password":
-                password = value
-
 def create_connection(db_file):
 
     conn = None
