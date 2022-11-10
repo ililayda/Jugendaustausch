@@ -117,6 +117,16 @@ def get_admin_data():
 
 @app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
 def save_admin_data():
+    for key, value in request.form.items():
+        if key == "surname":
+            name = value
+        elif key == "name":
+            vorname = value
+        elif key == "email":
+            email = value
+        elif key == "password":
+            password = value
+    ads.main(name, vorname, email, password)
 
 @app.route("/adminmask") #admin maske html
 def adminmask():
@@ -128,7 +138,6 @@ def participant_reg():
 
 @app.route("/post_field_reg_au", methods=["POST"]) #Teilnahme-Formular
 def get_participant_data():
-
     for key, value in request.form.items():
             if key == "surname":
                 name = value

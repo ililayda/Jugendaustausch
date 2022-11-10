@@ -75,6 +75,7 @@ hr {
   color: white;
   min-width: 50px;
   text-align: center;
+  font-family: 'Nunito', sans-serif;
 }
 input[type=text], input[type=password], input[type=number] {
       width: 96%;
