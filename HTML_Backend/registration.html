@@ -64,7 +64,6 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
 
-        <img src="../static/DPJW.jpg" width="550" height="180"> <!--550,180-->
         <h1 class="h3 mb-3 font-weight-normal">Registrieren</h1>
         <p><i> Du musst dich registrieren, um dich einloggen zu können. </i></p>
 
@@ -79,15 +78,15 @@
             <span id='message'></span>
 
         <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
-        <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
+        <button onclick="location.href='{{ url_for( 'get_user_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
         </button>
         <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-rg btn-primary">
             Zurück zum Login
         </button>
-
     </form>
     </div>
 </div>
+
 <div class="site-footer-content">
     <div class="site-footer-inner">
         <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>

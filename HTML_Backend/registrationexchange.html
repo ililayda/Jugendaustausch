@@ -68,10 +68,10 @@
             <p><i>gib deine korrekten Daten an, um dich für den Austausch anmelden zu können. </i></p>
 
             <label for="anrede"><i class="fa icon"> Anrede </i></label>
-            <select id="anrede" name="anrede" autofocus class="form-control">
+            <select id="anrede" name="anrede" autofocus class="form-control" required>
                 <option value="Frau">Frau</option>
                 <option value="Herr">Herr</option>
-                <option value="none">unbestimmt</option>
+                <option value="none">Unbestimmt</option>
             </select>
 
             <label for="name"><i class="fa icon"> Vorname </i></label>
@@ -90,7 +90,7 @@
             <input autocomplete="mobile" autofocus class="form-control" id="mobile" name="mobile" placeholder="Mobilfunknummer eintragen" required type="text">
 
             <label for="age"><i class="fa icon"> Volljährig? </i></label>
-            <select id="age" name="age" autofocus class="form-control">
+            <select id="age" name="age" autofocus class="form-control" required>
                 <option value="1">Ja</option>
                 <option value="0">Nein</option>
             </select>
@@ -100,7 +100,7 @@
             <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
 
             <p> Mit dem Einloggen akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
-            <button onclick="location.href='{{ url_for( 'post_field_reg_au' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
+            <button onclick="location.href='{{ url_for( 'get_participant_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
                 für den Austausch registrieren
             </button>
             <button onclick="location.href='{{ url_for( 'homepage' ) }}';" class="registerbtn btn btn-rg btn-primary">
@@ -110,6 +110,7 @@
 
     </div>
 </div>
+
 <div class="site-footer-content">
     <div class="site-footer-inner">
         <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>

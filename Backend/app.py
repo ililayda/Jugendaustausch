@@ -41,7 +41,6 @@ def homepage():
 def login():
     return render_template('login.html')
 
-
 @app.route('/login', methods=['POST'])
 def login_user():
 
@@ -117,12 +116,10 @@ def adminmask():
 
 @app.route("/reg_au") #austausch registrierung html
 def participant_reg():
-    return render_template('adminmask.html')
+    return render_template('registrationexchange.html')
 
 @app.route("/post_field_reg_au", methods=["POST"]) #Teilnahme-Formular
 def get_participant_data():
-
-    render_template('registrationexchange.html')
 
     for key, value in request.form.items():
             if key == "surname":
