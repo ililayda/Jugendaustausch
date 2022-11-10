@@ -100,7 +100,7 @@ def get_user_data():
 def adminlogin():
     return render_template('admin_login.html')
 
-@app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
+@app.route("/post_field_login_admin", methods=["POST"]) #admin login
 def get_admin_data():
 
     emailForm = request.form['email']
@@ -108,19 +108,15 @@ def get_admin_data():
     nameForm = request.form['name']
     surnameForm = request.form['surename']
 
-    if passwordForm == 'admin' and emailForm == 'j.buschmann':
+    if passwordForm == 'admin' and emailForm == 'j.buschmann' and nameForm == "Jörg" and surnameForm == "Buschmann":
         session['logged_in'] = True
-    elif :
-        for key, value in request.form.items():
-                if key == "surname":
-                    name = value
-                elif key == "name":
-                    vorname = value
-                elif key == "email":
-                        email = value
-                elif key == "password":
-                        password = value
-        ads.main(name, vorname, email, password)
+    elif passwordForm == 'admin' and emailForm == 'j.buschmann' and nameForm == "Jörg" and surnameForm == "Buschmann":
+        session['logged_in'] = True
+    else:
+        return render_template("adminlogin.html")
+
+@app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
+def save_admin_data():
 
 @app.route("/adminmask") #admin maske html
 def adminmask():
@@ -176,7 +172,15 @@ def get_id_for_online_payment():
             if key == "id":
                 id = value
     po.main(id)
-    
+
+
+    # HTML FÜR ENGLISCH ###############################################################################################
+
+
+
+
+
+
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
 app.run(debug=True,host='0.0.0.0', port=4000)
