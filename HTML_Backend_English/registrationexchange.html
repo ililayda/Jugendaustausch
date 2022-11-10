@@ -67,7 +67,7 @@
         <form method="post" action="/login">
             <p><i>state your correct data to be able to enter the exchange. </i></p>
 
-            <label for="anrede"><i class="fa icon"> Anrede </i></label>
+            <label for="anrede"><i class="fa icon"> Salutation </i></label>
             <select id="anrede" name="anrede" class="form-control" required>
                 <option value="Frau">Ms</option>
                 <option value="Herr">Mr</option>
@@ -96,7 +96,7 @@
             </select>
             <p> Please note: If you are not of age, your parents have to sign a letter. You can find the letter <a target="_blank" href="../static/ElternbriefWarschau2022.pdf"> here. </a> </p>
 
-            <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
+            <label for="email"><i class="fa fa-envelope icon"> Email </i></label>
             <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="Insert your email" required type="text">
 
             <p> When you log in you accept our <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">privacy policy.</a> </p>
@@ -104,7 +104,7 @@
                 to register for the exchange
             </button>
             <button onclick="location.href='{{ url_for( 'homepage' ) }}';" class="registerbtn btn btn-rg btn-primary">
-                back to the homepage
+                Back to the homepage
             </button>
         </form>
 
