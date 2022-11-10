@@ -102,17 +102,25 @@ def adminlogin():
 
 @app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
 def get_admin_data():
-    render_template('admin_login.html')
-    for key, value in request.form.items():
-            if key == "surname":
-                name = value
-            elif key == "name":
-                vorname = value
-            elif key == "email":
-                    email = value
-            elif key == "password":
-                    password = value
-    ads.main(name, vorname, email, password)
+
+    emailForm = request.form['email']
+    passwordForm = request.form['password']
+    nameForm = request.form['name']
+    surnameForm = request.form['surename']
+
+    if passwordForm == 'admin' and emailForm == 'j.buschmann':
+        session['logged_in'] = True
+    elif :
+        for key, value in request.form.items():
+                if key == "surname":
+                    name = value
+                elif key == "name":
+                    vorname = value
+                elif key == "email":
+                        email = value
+                elif key == "password":
+                        password = value
+        ads.main(name, vorname, email, password)
 
 @app.route("/adminmask") #admin maske html
 def adminmask():
