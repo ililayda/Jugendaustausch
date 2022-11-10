@@ -65,15 +65,15 @@
 	<div class="container">
 
 		<form method="post" action="/login">
-			<h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
+			<h1 class="h3 mb-3 font-weight-normal">Loginn</h1>
 		<p><i>You need to log in to use the website correctly. </i></p>
 
-		<label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
+		<label for="email"><i class="fa fa-envelope icon"> Email </i></label>
 		<input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="Insert your email" required type="text">
-		<label for="password"><i class="fa fa-key icon"> Passwort </i></label>
+		<label for="password"><i class="fa fa-key icon"> Password </i></label>
 		<input autocomplete="current-password" class="form-control" id="password" name="password" placeholder="Insert your password" required type="password">
 
-		<p> When you log in you accept our <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">privacy policy</a> </p>
+		<p> When you log in you accept our <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">privacy policy.</a> </p>
 		<button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
 			Login
 		</button>
