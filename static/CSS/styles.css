@@ -327,16 +327,18 @@ li.dropdown {
     margin-top: 10px;
     padding-bottom: 10px;
     position: relative;
-    align-items: center;
+    align-items: end;
     width: 100%;
     height: auto;
+    display: grid;
 }
 
 .site-footer-inner {
     position: relative;
-    align-items: center;
+    align-items: end;
     width: 88%;
     margin: 0 auto;
+    display: grid;
 }
 .table {
     text-align:left;
