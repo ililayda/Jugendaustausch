@@ -33,14 +33,15 @@ def home():
 @app.route('/login', methods=['POST'])
 def login():
 
+    emailForm = request.form['email']
+    passwordForm = request.form['password']
+
     if passwordForm == 'admin' and emailForm == 'DEV':
         session['logged_in'] = True
     else:
 
         pw = False
 
-        emailForm = request.form['email']
-        passwordForm = request.form['password']
         print(emailForm, passwordForm)
 
         user_obj = lg.give_user(emailForm)
