@@ -3,7 +3,7 @@ html, body {
   color: #192211;
   font-family: 'Calibri', sans-serif;
   font-weight: 200;
-  font-size: 1em; /*18px*/
+  font-size: 1.2em; /*18px*/
   height: 100vh;
   margin: 16px;
   text-align: center;
@@ -284,7 +284,7 @@ li.dropdown {
 .nav-links {
     color: #0000 !important;
     padding: 0 5px;
-    font-size: 25px;
+    font-size: .9em;
     font-weight: 600;
     text-align: right;
     letter-spacing: .1rem;
