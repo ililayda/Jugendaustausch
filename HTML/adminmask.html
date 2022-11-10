@@ -58,14 +58,20 @@
 <div class="mid-part">
     <div align="center" class="nav-header">
         <ul>
-            <li id="menu-item-dokuments" class="nav-links">
-                <a href="">Dokumente</a>
+            <li id="menu-item-doc" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Dokumente</a>
+                <div class="dropdown-content">
+                    <a target="_blank"  href="../static/ElternbriefWarschau2022.pdf">Elternbrief</a>
+                    <a target="_blank"  href="../static/Text_für_Betriebe_und_Eltern.pdf">Brief für Eltern/Betrieb</a>
+                    <a target="_blank"  href="../static/Rückerstattung.pdf">Rückerstattung</a>
+                </div>
+
             </li>
-            <li id="menu-item-list" class="nav-links">
-                <a href="participants.html">Teilnehmerliste</a>
+            <li id="menu-item-list" class="dropbtn">
+                <a href="participants.html">Teilnehmerliste filtern</a>
             </li>
-            <li id="menu-item-user" class="nav-links">
-                <a href="">Benutzerverwaltung</a>
+            <li id="menu-item-user" class="dropbtn">
+                <a href="adminmanagement.html">Adminverwaltung</a>
             </li>
         </ul>
     </div>
@@ -74,7 +80,30 @@
     <div class="admin-container">
 
         <h1>Wilkommen Admin</h1>
-
+        <table>
+            <tr>
+                <th >ID</th>
+                <th >Datum</th>
+                <th >Anrede</th>
+                <th >Name</th>
+                <th >Vorname</th>
+                <th >Klasse</th>
+                <th >Klassenleitung</th>
+                <th >volljährig</th>
+                <th >Bezahlt</th>
+            </tr>
+            <tr>
+                <th id="id"></th>
+                <th id="datum"></th>
+                <th id="anrede"></th>
+                <th id="name"></th>
+                <th id="vorname"></th>
+                <th id="klasse"></th>
+                <th id="klassenleitung"></th>
+                <th id="volljährig"></th>
+                <th id="hat_bezahlt"></th>
+            </tr>
+        </table>
 
 
 
