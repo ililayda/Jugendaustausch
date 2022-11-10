@@ -50,7 +50,6 @@ def login_user():
     if passwordForm == 'admin' and emailForm == 'DEV':
         session['logged_in'] = True
     else:
-
         pw = False
 
         print(emailForm, passwordForm)

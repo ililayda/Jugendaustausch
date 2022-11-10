@@ -27,12 +27,12 @@
 		</a>
 		<ul id="menu-dienstenavigation" class="rechts">
 			<li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
-				<a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
+				<a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">to GSO</a>
 			</li>
 			<li id="menu-item-out" class="dropdown">
-				<a href="javascript:void(0)" class="dropbtn">GSO Dienste</a>
+				<a href="javascript:void(0)" class="dropbtn">GSO Services</a>
 				<div class="dropdown-content">
-					<a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
+					<a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Timetable</a>
 					<a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
 					<a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
 				</div>
@@ -41,10 +41,10 @@
 				<a href="{{ url_for( 'home' ) }}">Startseite</a>
 			</li>
 			<li id="menu-item-login" class="dropdown">
-				<a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+				<a href="javascript:void(0)" class="dropbtn">Log In</a>
 				<div class="dropdown-content">
 					<a href="{{ url_for( 'login' ) }}">Login</a>
-					<a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+					<a href="{{ url_for( 'registration' ) }}">Register</a>
 					<a href="{{ url_for( 'adminlogin' ) }}">Admin Login</a>
 				</div>
 			</li>
@@ -66,19 +66,19 @@
 
 		<form method="post" action="/login">
 			<h1 class="h3 mb-3 font-weight-normal">Einloggen</h1>
-		<p><i>Du musst dich einloggen, um die Website richtig nutzen zu können. </i></p>
+		<p><i>You need to log in to use the website correctly. </i></p>
 
 		<label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
-		<input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
+		<input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="Insert your email" required type="text">
 		<label for="password"><i class="fa fa-key icon"> Passwort </i></label>
-		<input autocomplete="current-password" class="form-control" id="password" name="password" placeholder="Passwort eintragen" required type="password">
+		<input autocomplete="current-password" class="form-control" id="password" name="password" placeholder="Insert your password" required type="password">
 
-		<p> Mit dem Einloggen akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
+		<p> When you log in you accept our <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">privacy policy</a> </p>
 		<button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
-			Einloggen
+			Login
 		</button>
 		<button onclick="location.href='{{ url_for( 'registration' ) }}';" class="registerbtn btn btn-rg btn-primary"  type="button">
-			Registrieren
+			Register
 		</button>
 	</form>
 
@@ -87,8 +87,8 @@
 
 <div class="site-footer-content">
 	<div class="site-footer-inner">
-		<p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
-			<a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+		<p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Privacy Policy </a>
+			<a href="https://www.gso-koeln.de/impressum/"> Imprint </a></p>
 	</div>
 </div>
 </body>
