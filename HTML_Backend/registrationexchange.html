@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrieren </title>
+    <title>Registrieren Austausch</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -19,10 +19,10 @@
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
 </head>
 <body>
+<body>
 <section id="nav_menu-1" class="widget widget_nav_menu">
     <div class="menu-dienstenavigation-container">
         <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
-            <img align="left" width="174" height="70" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
         </a>
         <ul id="menu-dienstenavigation" class="rechts">
             <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
@@ -37,15 +37,23 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="index.html">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
-            <li id="menu-item-login" class="rechts">
-                <a href="login.html">Login</a>
+            <li id="menu-item-login" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for( 'login' ) }}">Login</a>
+                    <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+                    <a href="{{ url_for( 'get_admin_data' ) }}">Admin Login</a>
+                </div>
             </li>
         </ul>
     </div>
 </section>
+
 <div class="site-header-content">
+    <img align="left" width="250" height="90" src="https://www.gso-koeln.de/wp-content/uploads/2020/06/cropped-LOGO-GSO_neu.png" class="custom-logo" alt="Georg-Simon-Ohm-Berufskolleg">
+    <img align="right" src="../static/DPJW.jpg" width="250" height="90">
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
         </div>
@@ -54,13 +62,55 @@
 <div class="mid-part"></div>
 <div class="flex-center position-ref full-height">
     <div class="container">
-        <img src="public/DPJW.jpg" width="550" height="180"> <!--550,180-->
+
         <h1 class="h3 mb-3 font-weight-normal">Für den Austausch registrieren</h1>
+        <form method="post" action="/login">
+            <p><i>gib deine korrekten Daten an, um dich für den Austausch anmelden zu können. </i></p>
 
+            <label for="anrede"><i class="fa icon"> Anrede </i></label>
+            <select id="anrede" name="anrede" autofocus class="form-control" required>
+                <option value="Frau">Frau</option>
+                <option value="Herr">Herr</option>
+                <option value="none">Unbestimmt</option>
+            </select>
 
+            <label for="name"><i class="fa icon"> Vorname </i></label>
+            <input autocomplete="name" autofocus class="form-control" id="name" name="name" placeholder="Vorname eintragen" required type="text">
+
+            <label for="surname"><i class="fa icon"> Nachname </i></label>
+            <input autocomplete="surname" autofocus class="form-control" id="surname" name="surname" placeholder="Nachname eintragen" required type="text">
+
+            <label for="class"><i class="fa icon"> Klasse </i></label>
+            <input autocomplete="class" autofocus class="form-control" id="class" name="class" placeholder="Klasse eintragen" required type="text">
+
+            <label for="classT"><i class="fa icon"> Klassenleitung </i></label>
+            <input autocomplete="classT" autofocus class="form-control" id="classT" name="classT" placeholder="Klassenleitung eintragen" required type="text">
+
+            <label for="mobile"><i class="fa icon"> Mobilfunknummer </i></label>
+            <input autocomplete="mobile" autofocus class="form-control" id="mobile" name="mobile" placeholder="Mobilfunknummer eintragen" required type="text">
+
+            <label for="age"><i class="fa icon"> Volljährig? </i></label>
+            <select id="age" name="age" autofocus class="form-control" required>
+                <option value="1">Ja</option>
+                <option value="0">Nein</option>
+            </select>
+            <p> Merke: falls du nicht volljährig bist, müssen deine Eltern einen Brief ausfüllen. Den Elternbrief findest du <a target="_blank" href="../statics/ElternbriefWarschau2022.pdf"> hier </a> </p>
+
+            <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
+            <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
+
+            <p> Mit dem Einloggen akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
+            <button onclick="location.href='{{ url_for( 'get_participant_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
+                für den Austausch registrieren
+            </button>
+            <button onclick="location.href='{{ url_for( 'homepage' ) }}';" class="registerbtn btn btn-rg btn-primary">
+                zurück zur Startseite
+            </button>
+        </form>
 
     </div>
 </div>
+
 <div class="site-footer-content">
     <div class="site-footer-inner">
         <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>

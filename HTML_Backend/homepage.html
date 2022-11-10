@@ -37,14 +37,14 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="index.html">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
                 <div class="dropdown-content">
-                    <a  href="login.html">Login</a>
-                    <a   href="registration.html">Registrieren</a>
-                    <a   href="adminlogin.html">Admin Login</a>
+                    <a href="{{ url_for( 'login' ) }}">Login</a>
+                    <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+                    <a href="{{ url_for( 'get_admin_data' ) }}">Admin Login</a>
                 </div>
             </li>
         </ul>
@@ -81,8 +81,8 @@
         <p><i> Präsentation für Schüler (zum ansehen auf das Bild klicken)</i></p>
         <hr>
 
-        <p> hier können Sie sich registrieren: 
-        <a href="{{ url_for( login ) }}">
+        <p> hier kannst Du dich registrieren:
+        <a href="{{ url_for( 'reg_au' ) }}">
             Registration
         </a></p>
 

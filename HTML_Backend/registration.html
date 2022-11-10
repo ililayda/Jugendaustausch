@@ -38,14 +38,14 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="index.html">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
                 <div class="dropdown-content">
-                    <a  href="login.html">Login</a>
-                    <a   href="registration.html">Registrieren</a>
-                    <a   href="adminlogin.html">Admin Login</a>
+                    <a href="{{ url_for( 'login' ) }}">Login</a>
+                    <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+                    <a href="{{ url_for( 'get_admin_data' ) }}">Admin Login</a>
                 </div>
             </li>
         </ul>
@@ -64,7 +64,6 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
 
-        <img src="../static/DPJW.jpg" width="550" height="180"> <!--550,180-->
         <h1 class="h3 mb-3 font-weight-normal">Registrieren</h1>
         <p><i> Du musst dich registrieren, um dich einloggen zu können. </i></p>
 
@@ -79,15 +78,15 @@
             <span id='message'></span>
 
         <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
-        <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
+        <button onclick="location.href='{{ url_for( 'get_user_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
         </button>
         <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-rg btn-primary">
             Zurück zum Login
         </button>
-
     </form>
     </div>
 </div>
+
 <div class="site-footer-content">
     <div class="site-footer-inner">
         <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>

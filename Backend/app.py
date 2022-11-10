@@ -26,12 +26,23 @@ app = Flask(__name__, template_folder='../HTML_Backend', static_folder='../stati
 @app.route('/')
 def home():
     if not session.get('logged_in'):
+        return render_template('index.html')
+    else:
+        return render_template('homepage.html')
+
+@app.route('/homepage')
+def homepage():
+    if not session.get('logged_in'):
         return render_template('login.html')
     else:
         return render_template('homepage.html')
 
-@app.route('/login', methods=['POST'])
+@app.route('/login')
 def login():
+    return render_template('login.html')
+
+@app.route('/login', methods=['POST'])
+def login_user():
 
     emailForm = request.form['email']
     passwordForm = request.form['password']
@@ -87,39 +98,49 @@ def get_user_data():
 
 @app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
 def get_admin_data():
+    render_template('admin_login.html')
     for key, value in request.form.items():
-            if key == "name":
+            if key == "surname":
                 name = value
-            elif key == "vorname":
+            elif key == "name":
                 vorname = value
             elif key == "email":
                     email = value
-            elif key == "vorname":
+            elif key == "password":
                     password = value
     ads.main(name, vorname, email, password)
-    
+
+@app.route("/adminmask") #admin maske html
+def adminmask():
+    return render_template('adminmask.html')
+
+@app.route("/reg_au") #austausch registrierung html
+def participant_reg():
+    return render_template('registrationexchange.html')
+
 @app.route("/post_field_reg_au", methods=["POST"]) #Teilnahme-Formular
 def get_participant_data():
+
     for key, value in request.form.items():
-            if key == "name":
+            if key == "surname":
                 name = value
-            elif key == "vorname":
+            elif key == "name":
                 vorname = value
             elif key == "anrede":
                 anrede = value
-            elif key == "klasse":
+            elif key == "class":
                 klasse = value
-            elif key == "klassenleitung":
+            elif key == "classT":
                 klassenleitung = value
-            elif key == "mobilfunknummer":
+            elif key == "mobile":
                 mobilfunknummer = value
-            elif key == "volljährig":
+            elif key == "age":
                 volljährig = value
             elif key == "email":
                 email = value
     ts.main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email)
 
-    
+
 @app.route("/get_field_user", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():
    ag.main()   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
