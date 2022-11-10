@@ -4,6 +4,7 @@ import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
 import registration as rg
 import admin_speicherung as ads
 import login as lg
+import Ausgabe as ag
 
 email = "email"
 password = "password"
@@ -84,6 +85,12 @@ def get_admin_data():
             elif key == "vorname":
                     password = value
     ads.main(name, vorname, email, password)
+    
+@app.route("/get_field", methods=["GET"]) #admin_speicherung
+def get_all_participants():
+   ag.main   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
+
+
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
