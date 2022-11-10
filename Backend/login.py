@@ -21,16 +21,9 @@ def create_connection(db_file):
 def get_user(conn, email):
 
     print(email)
-
-
     cur = conn.cursor()
     sql = 'SELECT email, password FROM users WHERE email = ?;'
-
-    try:
-        with con:
-            cur.execute(sql, (email,))
-    except sqlite3.IntegrityError:
-        print("couldn't add Python twice")
+    cur.execute(sql, (email,))
 
     email = cur.fetchone()[0]
     password = cur.fetchone()[1]
