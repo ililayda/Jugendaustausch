@@ -52,9 +52,10 @@ p {
 }
 
 hr {
-  border: 1px solid #dcdcdc;
+  border: 1px solid #6b6b6b;
   margin-bottom: 25px;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+
 }
 
 .links > a {
@@ -248,6 +249,18 @@ li.dropdown {
   margin: 5px;
   background-color: white;
   text-align: center;
+}
+.pr {
+    font-size: 28px;
+    padding: 2px 20px;
+}
+.preise {
+  border-left: 6px solid #5b9bd5;
+  background-color: #dddddd;
+  font-size: 22px;
+  padding: 2px 16px;
+  margin: 5px;
+  text-align: Center;
 }
 .admin-container{
      background-color: white;
