@@ -5,6 +5,7 @@ import registration as rg
 import admin_speicherung as ads
 import login as lg
 import Ausgabe as ag
+import search as se
 
 email = "email"
 password = "password"
@@ -86,11 +87,16 @@ def get_admin_data():
                     password = value
     ads.main(name, vorname, email, password)
     
-@app.route("/get_field", methods=["GET"]) #admin_speicherung
+@app.route("/get_field", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():
    ag.main   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
 
-
+@app.route("/post_field", methods=["POST"]) #suche nach teilnehmern
+def get_search_():
+    for key, value in request.form.items():
+            if key == "name":
+                name = value
+    se.main(name) #erstellt die Datei suchergebnis.json, die muss ausgelesen werden
 
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
