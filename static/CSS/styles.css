@@ -157,7 +157,7 @@ select {
 ul {
     list-style-type: none;
     margin: auto ;
-    padding: 0;
+    padding: 8px;
     overflow: hidden;
     text-align: center;
     height: 65px;
