@@ -129,14 +129,14 @@ def get_search_():
                 name = value
     se.main(name) #erstellt die Datei suchergebnis.json, die muss ausgelesen werden
 
-@app.route("/post_field", methods=["POST"])
+@app.route("/post_field", methods=["POST"]) #bestätigung der bar zahlung
 def get_id_for_bar_payment():
     for key, value in request.form.items():
             if key == "id":
                 id = value
     pb.main(id)
 
-@app.route("/post_field", methods=["POST"])
+@app.route("/post_field", methods=["POST"]) #bestätigung der online zahlung
 def get_id_for_online_payment():
     for key, value in request.form.items():
             if key == "id":
