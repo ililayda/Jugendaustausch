@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jugendaustausch </title>
+    <title>Homepage </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -17,7 +17,6 @@
 
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
-
 </head>
 
 <body>
@@ -38,7 +37,7 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="{{ url_for( 'homepage' ) }}">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
@@ -64,16 +63,37 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
 
-        <h1 class="site-title site-title-text">Willkommen auf der Startseite des Jugendaustausch</h1>
-        hier kannst Du dich <a href="{{ url_for( 'homepage' ) }}">einloggen</a>
+        <!-- ##### ADD CONTENT HERE ##### -->
+
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li><{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+
+        <a target="_blank" href="../static/PresentationStudents.pdf">
+            <img class="img-border" width="500" height="400" src="../static/austauschPresentation.PNG" alt="Präsentation-Schüler.pdf">
+        </a>
+        <p><i> Präsentation für Schüler (zum ansehen auf das Bild klicken)</i></p>
+        <hr>
+
+        <p> hier kannst Du dich registrieren:
+        <a href="{{ url_for( 'participant_reg' ) }}">
+            Registration
+        </a></p>
 
     </div>
 </div>
 
 <div class="site-footer-content">
     <div class="site-footer-inner">
-        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
+        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>,
             <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
     </div>
 </div>
+
 </body>

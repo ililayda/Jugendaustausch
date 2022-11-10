@@ -327,6 +327,8 @@ li.dropdown {
     padding-bottom: 10px;
     position: relative;
     align-items: center;
+    width: 100%;
+    height: auto;
 }
 
 .site-footer-inner {

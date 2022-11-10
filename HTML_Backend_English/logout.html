@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jugendaustausch </title>
+    <title>Login </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="{{ url_for( 'homepage' ) }}">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
@@ -64,8 +64,6 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
 
-        <h1 class="site-title site-title-text">Willkommen auf der Startseite des Jugendaustausch</h1>
-        hier kannst Du dich <a href="{{ url_for( 'homepage' ) }}">einloggen</a>
 
     </div>
 </div>
@@ -76,4 +74,62 @@
             <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
     </div>
 </div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+      (function($) {
+
+        this.logoutToken = '';
+
+        this.$ = $;
+        this.$('#login').click(() => {
+          this.$.ajax({
+            url: 'http://localhost:63342/Jugendaustausch/HTML/login.html?_ijt=t3v5bsad49gj8cj986gvkpja93&_ij_reload=RELOAD_ON_SAVE/login?_format=json',
+            method: 'POST',
+            data: JSON.stringify({
+              email: 'email',
+              password: 'password'
+            }),
+            contentType: 'application/json',
+            dataType: 'json',
+            /*xhrFields: {
+               withCredentials: true
+            }, */
+            crossDomain: true
+          })
+          .then(res => {
+            console.log('RES =>', res);
+            this.logoutToken = res.logout_token;
+          });
+        });
+
+        this.$('#logout').click(() => {
+          this.$.ajax({
+            url: `http://www.octo2.dev/d8_2_cors/user/logout?_format=json&token=${this.logoutToken}`,
+            method: 'POST',
+            xhrFields: {
+               withCredentials: true
+            },
+            crossDomain: true
+          })
+          .then(res => console.log(res + "no error"))
+          .catch(err => console.log(err));
+        });
+
+        this.$('#get-node-1').click(() => {
+          this.$.ajax({
+            url: `http://www.octo2.dev/d8_2_cors/node/1?_format=hal_json`,
+            method: 'GET',
+            xhrFields: {
+               withCredentials: true
+            },
+            crossDomain: true
+          })
+          .then(res => console.log(res ))
+          .catch(err => console.log(err));
+        });
+
+      })(window.$);
+    </script>
+
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jugendaustausch </title>
+    <title>Admin Maske</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -17,7 +17,6 @@
 
     <!-- add icon link -->
     <link rel="shortcut icon" href="public/favicon.ico" type="image/x-icon">
-
 </head>
 
 <body>
@@ -38,7 +37,7 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="{{ url_for( 'homepage' ) }}">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
@@ -57,23 +56,43 @@
     <img align="right" src="../static/DPJW.jpg" width="250" height="90">
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
+
+
+
         </div>
     </div>
 </div>
-<div class="mid-part"></div>
-<div class="flex-center position-ref full-height">
-    <div class="container">
+<div class="mid-part">
+    <div align="center" class="nav-header">
+        <ul>
+            <li id="menu-item-dokuments" class="nav-links">
+                <a href="">Dokumente</a>
+            </li>
+            <li id="menu-item-list" class="nav-links">
+                <a href="">Teilnehmerliste</a>
+            </li>
+            <li id="menu-item-user" class="nav-links">
+                <a href="">Benutzerverwaltung</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<div class="flex-admin-center position-ref full-height">
+    <div class="admin-container">
 
-        <h1 class="site-title site-title-text">Willkommen auf der Startseite des Jugendaustausch</h1>
-        hier kannst Du dich <a href="{{ url_for( 'homepage' ) }}">einloggen</a>
+        <h1>Wilkommen Admin</h1>
+
 
     </div>
 </div>
 
 <div class="site-footer-content">
     <div class="site-footer-inner">
-        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
+        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklärung </a>
             <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
     </div>
 </div>
+
 </body>
+
+</html>

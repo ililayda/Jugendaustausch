@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jugendaustausch </title>
+    <title>Registration </title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -38,7 +38,7 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="{{ url_for( 'homepage' ) }}">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
@@ -64,16 +64,34 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
 
-        <h1 class="site-title site-title-text">Willkommen auf der Startseite des Jugendaustausch</h1>
-        hier kannst Du dich <a href="{{ url_for( 'homepage' ) }}">einloggen</a>
+        <h1 class="h3 mb-3 font-weight-normal">Registrieren</h1>
+        <p><i> Du musst dich registrieren, um dich einloggen zu können. </i></p>
 
+        <form action="/post_field_reg_user" method="post">
+        <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
+        <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
+
+        <label for="inputpassword"><i class="fa fa-key icon"> Passwort </i>
+            <input autocomplete="inputpassword" class="form-control" id="inputpassword" name="password" placeholder="Password eintragen" required type="password">
+        </label>
+            <input autocomplete="confirmpassword" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Password wiederholen" required type="password">
+            <span id='message'></span>
+
+        <p> Mit dem Registrieren akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
+        <button onclick="location.href='{{ url_for( 'get_user_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit" id="rgsbutton">Registrieren
+        </button>
+        <button onclick="location.href='{{ url_for( 'login' ) }}';" class="registerbtn btn btn-rg btn-primary">
+            Zurück zum Login
+        </button>
+    </form>
     </div>
 </div>
 
 <div class="site-footer-content">
     <div class="site-footer-inner">
-        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
-            <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+        <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
+            <a target="_blank" href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
     </div>
 </div>
 </body>
+
