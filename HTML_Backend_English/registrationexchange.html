@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Registrieren Austausch</title>
+    <title>Register Exchange</title>
 
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <script src="https://kit.fontawesome.com/6e0c5cae11.js" crossorigin="anonymous"></script>
@@ -26,24 +26,24 @@
         </a>
         <ul id="menu-dienstenavigation" class="rechts">
             <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
-                <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
+                <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">to GSO</a>
             </li>
             <li id="menu-item-out" class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">GSO Dienste</a>
+                <a href="javascript:void(0)" class="dropbtn">GSO Services</a>
                 <div class="dropdown-content">
-                    <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Stundenplan</a>
+                    <a target="_blank" rel="noopener" href="https://hektor.webuntis.com/WebUntis/?school=K175055">Timetable</a>
                     <a target="_blank" rel="noopener" href="https://moodle.schule.koeln/bk175055/login/index.php">Moodle</a>
                     <a target="_blank" rel="noopener" href="https://portal.schule.koeln/univention/portal/">Office 365</a>
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="{{ url_for( 'home' ) }}">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Homeepage</a>
             </li>
             <li id="menu-item-login" class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+                <a href="javascript:void(0)" class="dropbtn">Login</a>
                 <div class="dropdown-content">
                     <a href="{{ url_for( 'login' ) }}">Login</a>
-                    <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+                    <a href="{{ url_for( 'registration' ) }}">Register</a>
                     <a href="{{ url_for( 'adminlogin' ) }}">Admin Login</a>
                 </div>
             </li>
@@ -60,51 +60,51 @@
     </div>
 </div>
 <div class="mid-part"></div>
-<div class="flex-center position-ref full-height">
+<div class="flex-center position-ref full-height">undetermined
     <div class="container">
 
-        <h1 class="h3 mb-3 font-weight-normal">Für den Austausch registrieren</h1>
+        <h1 class="h3 mb-3 font-weight-normal">To register for the exchange</h1>
         <form method="post" action="/login">
-            <p><i>gib deine korrekten Daten an, um dich für den Austausch anmelden zu können. </i></p>
+            <p><i>state your correct data to be able to enter the exchange. </i></p>
 
             <label for="anrede"><i class="fa icon"> Anrede </i></label>
             <select id="anrede" name="anrede" class="form-control" required>
-                <option value="Frau">Frau</option>
-                <option value="Herr">Herr</option>
-                <option value="None">Unbestimmt</option>
+                <option value="Frau">Ms</option>
+                <option value="Herr">Mr</option>
+                <option value="None">Undetermined</option>
             </select>
 
-            <label for="name"><i class="fa icon"> Vorname </i></label>
-            <input autocomplete="name" autofocus class="form-control" id="name" name="name" placeholder="Vorname eintragen" required type="text">
+            <label for="name"><i class="fa icon"> First Name </i></label>
+            <input autocomplete="name" autofocus class="form-control" id="name" name="name" placeholder="Insert your first name" required type="text">
 
-            <label for="surname"><i class="fa icon"> Nachname </i></label>
-            <input autocomplete="surname" autofocus class="form-control" id="surname" name="surname" placeholder="Nachname eintragen" required type="text">
+            <label for="surname"><i class="fa icon"> Surname </i></label>
+            <input autocomplete="surname" autofocus class="form-control" id="surname" name="surname" placeholder="Insert your surname" required type="text">
 
-            <label for="class"><i class="fa icon"> Klasse </i></label>
-            <input autocomplete="class" autofocus class="form-control" id="class" name="class" placeholder="Klasse eintragen" required type="text">
+            <label for="class"><i class="fa icon"> Class </i></label>
+            <input autocomplete="class" autofocus class="form-control" id="class" name="class" placeholder="Insert your class" required type="text">
 
-            <label for="classT"><i class="fa icon"> Klassenleitung </i></label>
-            <input autocomplete="classT" autofocus class="form-control" id="classT" name="classT" placeholder="Klassenleitung eintragen" required type="text">
+            <label for="classT"><i class="fa icon"> Class teacher </i></label>
+            <input autocomplete="classT" autofocus class="form-control" id="classT" name="classT" placeholder="Insert your class teacher" required type="text">
 
-            <label for="mobile"><i class="fa icon"> Mobilfunknummer </i></label>
-            <input autocomplete="mobile" autofocus class="form-control" id="mobile" name="mobile" placeholder="Mobilfunknummer eintragen" required type="text">
+            <label for="mobile"><i class="fa icon"> Mobile Phone Number </i></label>
+            <input autocomplete="mobile" autofocus class="form-control" id="mobile" name="mobile" placeholder="Insert your mobile phone number" required type="text">
 
-            <label for="age"><i class="fa icon"> Volljährig? </i></label>
+            <label for="age"><i class="fa icon"> Are you of age? </i></label>
             <select id="age" name="age" autofocus class="form-control" required>
-                <option value="1">Ja</option>
-                <option value="0">Nein</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
             </select>
-            <p> Merke: falls du nicht volljährig bist, müssen deine Eltern einen Brief ausfüllen. Den Elternbrief findest du <a target="_blank" href="../static/ElternbriefWarschau2022.pdf"> hier </a> </p>
+            <p> Please note: If you are not of age, your parents have to sign a letter. You can find the letter <a target="_blank" href="../static/ElternbriefWarschau2022.pdf"> here. </a> </p>
 
             <label for="email"><i class="fa fa-envelope icon"> E-Mail </i></label>
-            <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">
+            <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="Insert your email" required type="text">
 
-            <p> Mit dem Einloggen akzeptierst du unsere <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">Datenschutzerklärung</a> </p>
+            <p> When you log in you accept our <a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/">privacy policy.</a> </p>
             <button onclick="location.href='{{ url_for( 'get_participant_data' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
-                für den Austausch registrieren
+                to register for the exchange
             </button>
             <button onclick="location.href='{{ url_for( 'homepage' ) }}';" class="registerbtn btn btn-rg btn-primary">
-                zurück zur Startseite
+                back to the homepage
             </button>
         </form>
 
@@ -113,8 +113,8 @@
 
 <div class="site-footer-content">
     <div class="site-footer-inner">
-        <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
-            <a target="_blank" href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+        <p><a target="_blank" href="https://www.gso-koeln.de/datenschutzerklaerung/"> Privacy Policy </a>
+            <a target="_blank" href="https://www.gso-koeln.de/impressum/"> Imprint </a></p>
     </div>
 </div>
 </body>
