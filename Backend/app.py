@@ -1,4 +1,4 @@
-from flask import Flask, flash, redirect, render_template, request, session, abort
+from flask import Flask, flash, redirect, render_template, request, session, abort # pip install Flask
 import os
 import bcrypt # CMD: "pip3 install bcrypt" & "pip3 install schedule"
 import registration as rg
@@ -97,7 +97,7 @@ def get_user_data():
 
 @app.route("/adminlogin") #admin login html
 def adminlogin():
-    return render_template('admin_login.html')
+    return render_template('adminlogin.html')
 
 @app.route("/post_field_login_admin", methods=["POST"]) #admin login
 def get_admin_data():
