@@ -236,11 +236,13 @@ def get_id_for_payment():
         elif key == "hat_online_bezahlt":
             hat_online_bezahlt = value
 
+    if hat_bar_bezahlt == 1:
+        pb.main(id)
+
     if hat_online_bezahlt == 1:
         po.main(id)
 
-    if hat_bar_bezahlt == 1:
-        pb.main(id)
+    return homepage()
 
 
 

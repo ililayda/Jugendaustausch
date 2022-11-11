@@ -340,23 +340,21 @@ li.dropdown {
     margin: 0 auto;
     display: grid;
 }
-.table {
+
+table {
     text-align:left;
     align: left;
-  padding: 15px;
+    padding: 15px;
     border: 1px solid black;
     border-collapse: collapse;
+    background-color: #5b9bd5;
+    color: white;
 }
 th, td {
   padding: 15px;
     border: 1px solid black;
     border-collapse: collapse;
     background-color: #dddddd;
-}
-
-.table-title {
-    background-color: #5b9bd5;
-    color: white;
 }
 
 .text-field {
