@@ -351,10 +351,11 @@ th, td {
   padding: 15px;
     border: 1px solid black;
     border-collapse: collapse;
-    background-color: #ffe6b3;
+    background-color: #dddddd;
 }
 .table-title {
-    background-color: #ffbb33;
+    background-color: #5b9bd5;
+    color: white;
 }
 
 .text-field {

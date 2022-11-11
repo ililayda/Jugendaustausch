@@ -53,6 +53,9 @@
     <img align="right" src="../static/DPJW.jpg" width="250" height="90">
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
+
+
+
         </div>
     </div>
 </div>
@@ -60,34 +63,35 @@
     <div align="center" class="nav-header">
         <ul>
             <li id="menu-item-user" class="dropbtn">
-                <a href="'{{ url_for( 'adminmask' ) }}'"><-- Zurück</a>
+                <a href="{{ url_for( 'adminmask' ) }}"><-- Zurück</a>
             </li>
         </ul>
-        </div>
+    </div>
 </div>
 <div class="flex-center position-ref full-height">
     <div class="container">
         <form method="post" action="/login">
-            <h1 class="h3 mb-3 font-weight-normal">Teilnehmer verwaltung</h1>
-            <p><i>Hier können Admins, die Teilnehmer verwalten. </i></p>
+            <h1 class="h3 mb-3 font-weight-normal">Teilnehmerverwaltung</h1>
+            <p><i>Hier können Admins den Zahlungsstatus bearbeiten. </i></p>
 
-            <label for="name"><i class="fa icon"> Vorname </i></label>
-            <input autocomplete="name" autofocus class="form-control" id="name" name="name" placeholder="Vorname eintragen" required type="text">
+            <label for="id"><i class="fa  icon"> Nutzer ID </i></label>
+            <input autocomplete="id" autofocus class="form-control" id="id" name="id" placeholder="Nutzer ID eintragen" required type="text">
 
-            <label for="surname"><i class="fa icon"> Nachname </i></label>
-            <input autocomplete="surname" autofocus class="form-control" id="surname" name="surname" placeholder="Nachname eintragen" required type="text">
-
-            <label for="hat_bezahlt"><i class="fa icon"> hat Bezahlt </i></label>
-            <select id="hat_bezahlt" name="hat_bezahlt" class="form-control" required>
+            <label for="hat_bar_bezahlt"><i class="fa icon"> Anzahlung Bar bezahlt (80€) </i></label>
+            <select id="hat_bar_bezahlt" name="hat_bar_bezahlt" class="form-control" required>
+                <option value="1">Ja</option>
+                <option value="0">Nein</option>
+            </select>
+            <label for="hat_online_bezahlt"><i class="fa icon"> Online bezahlt (180€) </i></label>
+            <select id="hat_online_bezahlt" name="hat_online_bezahlt" class="form-control" required>
                 <option value="1">Ja</option>
                 <option value="0">Nein</option>
             </select>
 
-
-            <button onclick="location.href='adminmask.html';" class="registerbtn btn btn-lg btn-primary" type="submit">
+            <button onclick="location.href='{{ url_for( 'get_id_for_payment' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
                 Änderungen speichern
             </button>
-            <button onclick="location.href='adminmask.html';" class="registerbtn btn btn-rg btn-primary" type="submit">
+            <button onclick="location.href='{{ url_for( 'adminmask' ) }}';" class="registerbtn btn btn-rg btn-primary" type="submit">
                 zurück
             </button>
         </form>
@@ -99,12 +103,12 @@
 
 
 
-<div class="site-footer-content">
-    <div class="site-footer-inner">
-        <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
-            <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+        <div class="site-footer-content">
+            <div class="site-footer-inner">
+                <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklaerung </a>
+                    <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+            </div>
+        </div>
     </div>
-</div>
-</div>
 </div>
 </body>

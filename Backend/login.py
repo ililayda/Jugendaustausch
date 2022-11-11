@@ -22,21 +22,45 @@ def get_user(conn, email):
 
     print(email)
     cur = conn.cursor()
-    sql = 'SELECT email, password FROM users WHERE email LIKE %;'
-    cur.execute(sql, (email,))
+    sql = 'SELECT email, password FROM users WHERE email LIKE ?;'
+    result = cur.execute(sql, (email,))
 
-    email = cur.fetchone()[0]
-    password = cur.fetchone()[1]
+    line = result.fetchone()
+    email = line[0]
+    password = line[1]
 
     print(email)
     print(password)
-    conn.commit()
 
     if not password: # An empty result evaluates to False.
         print("Login failed")
     else:
         print("Welcome")
         user_obj = (email, password)
+        return user_obj
+
+
+def get_admin(conn, email):
+
+    print(email)
+    cur = conn.cursor()
+    sql = 'SELECT email, password, name, vorname FROM admins WHERE email LIKE ?;'
+    result = cur.execute(sql, (email,))
+
+    line = result.fetchone()
+    email = line[0]
+    password = line[1]
+    name = line[2]
+    vorname = line[3]
+
+    print(email)
+    print(password)
+
+    if not password: # An empty result evaluates to False.
+        print("Login failed")
+    else:
+        print("Welcome")
+        user_obj = (email, password, name, vorname)
         return user_obj
 
 
@@ -48,6 +72,17 @@ def give_user(email):
     if conn is not None:
         with conn:
             return get_user(conn, email)
+    else:
+        print("Error! cannot check the database connection.")
+
+def give_admin(email):
+    database = r"./austausch.db"
+
+    conn = create_connection(database)
+
+    if conn is not None:
+        with conn:
+            return get_admin(conn, email)
     else:
         print("Error! cannot check the database connection.")
 

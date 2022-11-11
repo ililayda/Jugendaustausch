@@ -19,6 +19,8 @@
 <body>
 <section id="nav_menu-1" class="widget widget_nav_menu">
     <div class="menu-dienstenavigation-container">
+        <a href="https://www.gso-koeln.de/" class="custom-logo-link" rel="home" aria-current="page">
+        </a>
         <ul id="menu-dienstenavigation" class="rechts">
             <li id="menu-item-gso" class="menu-item menu-item-type-custom menu-item-object-custom">
                 <a target="_blank" rel="noopener" href="https://www.gso-koeln.de/">zur GSO</a>
@@ -32,11 +34,15 @@
                 </div>
             </li>
             <li id="menu-item-home" class="rechts">
-                <a href="index.html">Startseite</a>
+                <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="dropdown">
-                <a href="login.html" class="dropbtn">Abmelden</a>
-
+                <a href="javascript:void(0)" class="dropbtn">Anmeldung</a>
+                <div class="dropdown-content">
+                    <a href="{{ url_for( 'login' ) }}">Login</a>
+                    <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
+                    <a href="{{ url_for( 'adminlogin' ) }}">Admin Login</a>
+                </div>
             </li>
         </ul>
     </div>
@@ -48,6 +54,8 @@
     <div class="site-header-inner">
         <div id="site-navigation-container" class="main-navigation-container">
 
+
+
         </div>
     </div>
 </div>
@@ -55,7 +63,7 @@
     <div align="center" class="nav-header">
         <ul>
             <li id="menu-item-user" class="dropbtn">
-                <a href="adminmask.html"><-- Zurück</a>
+                <a href="{{ url_for( 'adminmask' ) }}"><-- Zurück</a>
             </li>
         </ul>
         </div>
@@ -63,11 +71,11 @@
 <div class="flex-center position-ref full-height">
     <div class="container">
         <form method="post" action="/login">
-            <h1 class="h3 mb-3 font-weight-normal">Teilnehmer verwaltung</h1>
-            <p><i>Hier können Admins, den Zahlungsstatus bearbeiten. </i></p>
+            <h1 class="h3 mb-3 font-weight-normal">Teilnehmerverwaltung</h1>
+            <p><i>Hier können Admins den Zahlungsstatus bearbeiten. </i></p>
 
-            <label for="id"><i class="fa  icon"> Schüler ID </i></label>
-            <input autocomplete="id" autofocus class="form-control" id="id" name="id" placeholder=" ID " required type="text">
+            <label for="id"><i class="fa  icon"> Vorname </i></label>
+            <input autocomplete="id" autofocus class="form-control" id="id" name="id" placeholder="Nutzer ID eintragen" required type="text">
 
             <label for="hat_bar_bezahlt"><i class="fa icon"> Anzahlung Bar bezahlt (80€) </i></label>
             <select id="hat_bar_bezahlt" name="hat_bar_bezahlt" class="form-control" required>
@@ -80,10 +88,10 @@
                 <option value="0">Nein</option>
             </select>
 
-            <button onclick="location.href='{{ url_for( 'payment_bar.py' ) }}';location.href='{{ url_for( 'payment_online.py' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
+            <button onclick="location.href='{{ url_for( 'get_id_for_bar_payment' );( 'get_id_for_online_payment' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
                 Änderungen speichern
             </button>
-            <button onclick="location.href='adminmask.html';" class="registerbtn btn btn-rg btn-primary" type="submit">
+            <button onclick="location.href='{{ url_for( 'adminmask' ) }}';" class="registerbtn btn btn-rg btn-primary" type="submit">
                 zurück
             </button>
         </form>

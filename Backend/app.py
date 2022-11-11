@@ -109,17 +109,42 @@ def get_admin_data():
     emailForm = request.form['email']
     passwordForm = request.form['password']
     nameForm = request.form['name']
-    surnameForm = request.form['surename']
+    surnameForm = request.form['surname']
 
-    if passwordForm == 'admin' and emailForm == 'j.buschmann' and nameForm == "Jörg" and surnameForm == "Buschmann":
-        session['logged_in'] = True
-    elif passwordForm == 'admin' and emailForm == 'j.buschmann' and nameForm == "Jörg" and surnameForm == "Buschmann":
-        session['logged_in'] = True
+    if passwordForm == 'admin' and emailForm == 'j.buschmann' and nameForm == "J" and surnameForm == "Buschmann":
+        session['logged_in_admin'] = True
     else:
-        return render_template("adminlogin.html")
+        pw = False
+
+        print(emailForm, passwordForm, nameForm, surnameForm)
+
+        user_obj = lg.give_admin(emailForm)
+        emailDB = user_obj[0]
+        passwordDB = user_obj[1]
+        nameDB = user_obj[2]
+        surnameDB = user_obj[3]
+        print(emailDB, passwordDB)
+
+        # Use conditions to compare the authenticating password with the stored one:
+        passwordForm = passwordForm.encode('utf-8')
+
+        if bcrypt.checkpw(passwordForm, passwordDB):
+            print("password matches")
+            pw = True
+        else:
+            print("incorrect password")
+
+        if pw == True and (emailForm.__contains__(emailDB)) and (nameForm.__contains__(nameDB)) and (surnameForm.__contains__(surnameDB)):
+            session['logged_in_admin'] = True
+            return render_template("adminmask.html")
+        else:
+            flash('Falsche Anmeldedaten!')
+    return home()
+
 
 @app.route("/post_field_reg_admin", methods=["POST"]) #admin_speicherung
 def save_admin_data():
+    session['logged_in_admin'] = True
     for key, value in request.form.items():
         if key == "surname":
             name = value
@@ -178,7 +203,12 @@ def get_participant_data():
 
 @app.route("/get_field_user", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():
-   ag.main()   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
+
+    temp = df.to_dict('adminmask')
+    columnNames = df.columns.values
+
+    ag.main()   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
+    return render_template('adminmask.html', adminmask=temp, colnames=columnNames)
 
 @app.route("/post_field_user_search", methods=["POST"]) #suche nach teilnehmern
 def get_search_():
@@ -205,8 +235,7 @@ def get_id_for_payment():
 
 
 
-
-### HTML FÜR ENGLISCH ###############################################################################################
+    # HTML FÜR ENGLISCH ###############################################################################################
 
 
 

@@ -78,7 +78,7 @@
                 <a href="{{ url_for( 'participants' ) }}">Teilnehmerliste bearbeiten</a>
             </li>
             <li id="menu-item-user" class="dropbtn">
-                <a href="{{ url_for( 'post_field_reg_admin' ) }}">Adminverwaltung</a>
+                <a href="{{ url_for( 'save_admin_data' ) }}">Adminverwaltung</a>
             </li>
         </ul>
     </div>
@@ -87,35 +87,30 @@
     <div class="admin-container">
 
         <h1>Wilkommen Admin</h1>
-        <table border="1">
+
+        <table class="table">
             <tr>
-                {% for col in colnames %}
-                <th >ID</th>
-                <th >Datum</th>
-                <th >Anrede</th>
-                <th >Name</th>
-                <th >Vorname</th>
-                <th >Klasse</th>
-                <th >Klassenleitung</th>
-                <th >volljährig</th>
-                <th >Bezahlt</th>
-                {% endfor %}
+                <th class="table-title">ID</th>
+                <th class="table-title">Datum</th>
+                <th class="table-title">Anrede</th>
+                <th class="table-title">Name</th>
+                <th class="table-title">Vorname</th>
+                <th class="table-title">Klasse</th>
+                <th class="table-title">Klassenleitung</th>
+                <th class="table-title">volljährig</th>
+                <th class="table-title">Bezahlt</th>
             </tr>
-            {% for record in adminmask %}
             <tr>
-                {% for col in colnames %}
-                <th id="id">{{ record[col] }}</th>
-                <th id="datum">{{ record[col] }}</th>
-                <th id="anrede">{{ record[col] }}</th>
-                <th id="name">{{ record[col] }}</th>
-                <th id="vorname">{{ record[col] }}</th>
-                <th id="klasse">{{ record[col] }}</th>
-                <th id="klassenleitung">{{ record[col] }}</th>
-                <th id="volljährig">{{ record[col] }}</th>
-                <th id="hat_bezahlt">{{ record[col] }}</th>
-                {% endfor %}
+                <th id="id"></th>
+                <th id="datum"></th>
+                <th id="anrede"></th>
+                <th id="name"></th>
+                <th id="vorname"></th>
+                <th id="klasse"></th>
+                <th id="klassenleitung"></th>
+                <th id="volljährig"></th>
+                <th id="hat_bezahlt"></th>
             </tr>
-            {% endfor %}
         </table>
 
     </div>
