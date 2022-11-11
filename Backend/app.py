@@ -39,7 +39,7 @@ def homepage():
     elif session.get('logged_in_admin'):
         return render_template('adminmask.html')
     else:
-        return render_template('index.html')
+        return render_template('login.html')
 
 @app.route('/login')
 def login():
