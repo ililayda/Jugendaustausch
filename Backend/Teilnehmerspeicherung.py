@@ -18,7 +18,7 @@ def create_connection(db_file):
 
 def insert_participant(conn, new_participant):
 
-    sql = "INSERT INTO participants_"+str(dt.current_year)+"(datum, anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email, hat_bezahlt) VALUES(?,?,?,?,?,?,?,?,?,?);"
+    sql = "INSERT INTO participants_"+str(dt.current_year)+"(datum, anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljaehrig, email, hat_bezahlt) VALUES(?,?,?,?,?,?,?,?,?,?);"
     cur = conn.cursor()
     cur.execute(sql, new_participant)
     conn.commit()

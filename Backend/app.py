@@ -203,6 +203,7 @@ def get_participant_data():
             elif key == "email":
                 email = value
     ts.main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email)
+    return homepage()
 
 @app.route("/get_field_partList", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():

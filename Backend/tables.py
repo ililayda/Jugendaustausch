@@ -35,7 +35,7 @@ def main():
                                         klasse text,
                                         klassenleitung text,
                                         mobilfunknummer text,
-                                        volljährig integer,
+                                        volljaehrig integer,
                                         email text,
                                         hat_bezahlt integer 
                                     ); """
@@ -50,9 +50,9 @@ def main():
                                 );"""
 
 
-    sql_create_users_table = """ CREATE TABLE IF NOT EXISTS users(id integer PRIMARY KEY, email text, password text);"""
+    sql_create_users_table = """CREATE TABLE IF NOT EXISTS users(id integer PRIMARY KEY, email text, password text);"""
     
-    sql_create_zahlungs_table = " CREATE TABLE IF NOT EXISTS payment(user_id integer NOT NULL, datum NOT NULL, hat_bar_bezahlt integer, hat_online_bezahlt integer, PRIMARY KEY (user_id, datum), FOREIGN KEY(user_id) REFERENCES participants_"+str(dt.current_year)+"(id));"
+    sql_create_zahlungs_table = "CREATE TABLE IF NOT EXISTS payment(user_id integer NOT NULL, datum NOT NULL, hat_bar_bezahlt integer, hat_online_bezahlt integer, PRIMARY KEY (user_id, datum), FOREIGN KEY(user_id) REFERENCES participants_"+str(dt.current_year)+"(id));"
     
     conn = create_connection(database)
 
@@ -60,11 +60,8 @@ def main():
     if conn is not None:
 
         create_table(conn, sql_create_participants_table)
-
         create_table(conn, sql_create_admins_table)
-        
         create_table(conn, sql_create_users_table)
-        
         create_table(conn, sql_create_zahlungs_table)
     else:
         print("Error! cannot create the database connection.")
