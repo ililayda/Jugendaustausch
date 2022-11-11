@@ -85,6 +85,7 @@ def login_user():
 @app.route("/logout")
 def logout():
     session['logged_in'] = False
+    session['logged_in_admin'] = False
     return home()
 
 @app.route("/registration")
@@ -157,6 +158,17 @@ def save_admin_data():
         elif key == "password":
             password = value
     ads.main(name, vorname, email, password)
+    return homepage()
+
+@app.route("/adminreg") #admin maske html
+def adminreg():
+    if session.get('logged_in_admin'):
+        session['logged_in_admin'] = True
+        return render_template('adminregister.html')
+    elif session.get('logged_in'):
+        return render_template('homepage.html')
+    else:
+        return render_template('index.html')
 
 @app.route("/adminmask") #admin maske html
 def adminmask():
