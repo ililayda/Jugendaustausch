@@ -61,32 +61,31 @@
         </div>
 </div>
 <div class="flex-center position-ref full-height">
-    <input type="text" id="filter" onkeyup="tablefilter()" placeholder="Search for names..">
     <div class="container">
-        <table>
-            <tr>
-                <th >ID</th>
-                <th >Datum</th>
-                <th >Anrede</th>
-                <th >Name</th>
-                <th >Vorname</th>
-                <th >Klasse</th>
-                <th >Klassenleitung</th>
-                <th >volljährig</th>
-                <th >Bezahlt</th>
-            </tr>
-            <tr>
-                <th id="id"></th>
-                <th id="datum"></th>
-                <th id="anrede"></th>
-                <th id="name"></th>
-                <th id="vorname"></th>
-                <th id="klasse"></th>
-                <th id="klassenleitung"></th>
-                <th id="volljährig"></th>
-                <th id="hat_bezahlt"></th>
-            </tr>
-        </table>
+        <form method="post" action="/login">
+            <h1 class="h3 mb-3 font-weight-normal">Teilnehmer verwaltung</h1>
+            <p><i>Hier können Admins, die Teilnehmer verwalten. </i></p>
+
+            <label for="vorname"><i class="fa  icon"> Vorname </i></label>
+            <input autocomplete="vorname" autofocus class="form-control" id="vorname" name="vorname" placeholder="Vorname eintragen" required type="text">
+
+            <label for="nachname"><i class="fa  icon"> Nachname </i></label>
+            <input autocomplete="nachname" autofocus class="form-control" id="nachname" name="nachname" placeholder="Nachname eintragen" required type="text">
+
+            <label for="hat_bezahlt"><i class="fa icon"> hat Bezahlt </i></label>
+            <select id="hat_bezahlt" name="hat_bezahlt" class="form-control" required>
+                <option value="1">Ja</option>
+                <option value="0">Nein</option>
+            </select>
+
+
+            <button onclick="location.href='adminmask.html';" class="registerbtn btn btn-lg btn-primary" type="submit">
+                Änderungen speichern
+            </button>
+            <button onclick="location.href='adminmask.html';" class="registerbtn btn btn-rg btn-primary" type="submit">
+                zurück
+            </button>
+        </form>
 
         <!-- ##### ADD CONTENT HERE ##### -->
 
