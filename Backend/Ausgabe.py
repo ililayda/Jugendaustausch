@@ -20,16 +20,15 @@ def get_participants(conn, participants, one=False):
 
     cur = conn.cursor()
     cur.execute(participants)
-    conn.commit()
     r = [dict((cur.description[i][0], value) \
                for i, value in enumerate(row)) for row in cur.fetchall()]
     return (r[0] if r else None) if one else r
 
 def main():
     if os.path.exists("teilnehmerliste.json"):
-      os.remove("teilnehmerliste.json")
+        os.remove("teilnehmerliste.json")
+
     database = r"./austausch.db"
-    
     conn = create_connection(database)
     participants = "SELECT * FROM participants_"+str(dt.current_year)+";"
     

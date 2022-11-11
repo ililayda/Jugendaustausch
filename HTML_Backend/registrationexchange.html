@@ -43,7 +43,7 @@
                 <div class="dropdown-content">
                     <a href="{{ url_for( 'login' ) }}">Login</a>
                     <a href="{{ url_for( 'registration' ) }}">Registrieren</a>
-                    <a href="{{ url_for( 'adminlogin' ) }}">Admin Login</a>
+                    <a href="{{ url_for( 'logout' ) }}">Abmelden</a>
                 </div>
             </li>
         </ul>
@@ -58,7 +58,16 @@
         </div>
     </div>
 </div>
-<div class="mid-part"></div>
+<div class="mid-part">
+    <div align="center" class="nav-header">
+        <ul>
+            <li id="menu-item-user" class="dropbtn">
+                <a href="{{ url_for( 'home' ) }}"><-- Zurück</a>
+            </li>
+        </ul>
+    </div>
+</div>
+
 <div class="flex-center position-ref full-height">
     <div class="container">
 
@@ -90,11 +99,11 @@
             <input autocomplete="mobile" autofocus class="form-control" id="mobile" name="mobile" placeholder="Mobilfunknummer eintragen" required type="text">
 
             <label for="age"><i class="fa icon"> Volljährig? </i></label>
+            <p> Merke: falls du nicht volljährig bist, müssen deine Eltern einen Brief ausfüllen. Den Elternbrief findest du <a target="_blank" href="../static/ElternbriefWarschau2022.pdf"> hier </a> </p>
             <select id="age" name="age" autofocus class="form-control" required>
                 <option value="1">Ja</option>
                 <option value="0">Nein</option>
             </select>
-            <p> Merke: falls du nicht volljährig bist, müssen deine Eltern einen Brief ausfüllen. Den Elternbrief findest du <a target="_blank" href="../static/ElternbriefWarschau2022.pdf"> hier </a> </p>
 
             <label for="email"><i class="fa icon"> E-Mail </i></label>
             <input autocomplete="email" autofocus class="form-control" id="email" name="email" placeholder="E-Mail eintragen" required type="text">

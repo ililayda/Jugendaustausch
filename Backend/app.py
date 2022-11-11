@@ -9,6 +9,8 @@ import search as se
 import Teilnehmerspeicherung as ts
 import payment_bar as pb
 import payment_online as po
+import json
+from json2html import * # pip install json2html
 
 email = "email"
 password = "password"
@@ -161,6 +163,7 @@ def adminmask():
     if session.get('logged_in_admin'):
         session['logged_in_admin'] = True
         return render_template('adminmask.html')
+        get_all_participants()
     elif session.get('logged_in'):
         return render_template('homepage.html')
     else:
@@ -201,14 +204,19 @@ def get_participant_data():
                 email = value
     ts.main(anrede, name, vorname, klasse, klassenleitung, mobilfunknummer, volljährig, email)
 
-@app.route("/get_field_user", methods=["GET"]) #teilnehmerliste ausgeben
+@app.route("/get_field_partList", methods=["GET"]) #teilnehmerliste ausgeben
 def get_all_participants():
+    ag.main()  # erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
 
-    temp = df.to_dict('adminmask')
-    columnNames = df.columns.values
+    data = open('teilnehmerliste.json', "r")
+    jsonFile = data.read()
+    foo = json.loads(jsonFile)
+    html = json2html.convert(foo)
 
-    ag.main()   #erstellt die Datei teilnehmerliste.json, die muss ausgelesen werden
-    return render_template('adminmask.html', adminmask=temp, colnames=columnNames)
+    with open('../HTML_Backend/participantList.html', "w") as ht:
+        ht.write(html)
+
+    return render_template('participantList.html')
 
 @app.route("/post_field_user_search", methods=["POST"]) #suche nach teilnehmern
 def get_search_():

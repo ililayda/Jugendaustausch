@@ -40,7 +40,7 @@
                 <a href="{{ url_for( 'home' ) }}">Startseite</a>
             </li>
             <li id="menu-item-login" class="rechts">
-                <a href="login.html">Abmelden</a>
+                <a href="{{ url_for( 'logout' ) }}">Abmelden</a>
             </li>
         </ul>
     </div>
@@ -70,7 +70,7 @@
 
             </li>
             <li id="menu-item-list" class="dropbtn">
-                <a href="{{ url_for( 'participants' ) }}">Teilnehmerliste bearbeiten</a>
+                <a href="{{ url_for( 'participants' ) }}">Teilnehmerbezahlung bearbeiten</a>
             </li>
             <li id="menu-item-user" class="dropbtn">
                 <a href="{{ url_for( 'save_admin_data' ) }}">Adminverwaltung</a>
@@ -81,40 +81,19 @@
 <div class="flex-admin-center position-ref full-height">
     <div class="admin-container">
 
-        <h1>Wilkommen Admin</h1>
+        <h1>Willkommen Admin</h1>
 
-        <table class="table">
-            <tr>
-                <th class="table-title">ID</th>
-                <th class="table-title">Datum</th>
-                <th class="table-title">Anrede</th>
-                <th class="table-title">Name</th>
-                <th class="table-title">Vorname</th>
-                <th class="table-title">Klasse</th>
-                <th class="table-title">Klassenleitung</th>
-                <th class="table-title">volljährig</th>
-                <th class="table-title">Bezahlt</th>
-            </tr>
-            <tr>
-                <th id="id"></th>
-                <th id="datum"></th>
-                <th id="anrede"></th>
-                <th id="name"></th>
-                <th id="vorname"></th>
-                <th id="klasse"></th>
-                <th id="klassenleitung"></th>
-                <th id="volljährig"></th>
-                <th id="hat_bezahlt"></th>
-            </tr>
-        </table>
+        <button onclick="location.href='{{ url_for( 'get_all_participants' ) }}';" class="registerbtn btn btn-rg btn-primary"  type="button">
+            Teilnehmerliste
+        </button>
 
-    </div>
-</div>
 
 <div class="site-footer-content">
     <div class="site-footer-inner">
         <p><a href="https://www.gso-koeln.de/datenschutzerklaerung/"> Datenschutzerklärung </a>
             <a href="https://www.gso-koeln.de/impressum/"> Impressum </a></p>
+    </div>
+</div>
     </div>
 </div>
 
