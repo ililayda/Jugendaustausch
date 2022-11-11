@@ -65,14 +65,20 @@
 <div class="mid-part">
     <div align="center" class="nav-header">
         <ul>
-            <li id="menu-item-dokuments" class="nav-links">
-                <a href="">Dokumente</a>
+            <li id="menu-item-doc" class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Dokumente</a>
+                <div class="dropdown-content">
+                    <a target="_blank"  href="../static/ElternbriefWarschau2022.pdf">Elternbrief</a>
+                    <a target="_blank"  href="../static/Text_für_Betriebe_und_Eltern.pdf">Brief für Eltern/Betrieb</a>
+                    <a target="_blank"  href="../static/Rückerstattung.pdf">Rückerstattung</a>
+                </div>
+
             </li>
-            <li id="menu-item-list" class="nav-links">
-                <a href="">Teilnehmerliste</a>
+            <li id="menu-item-list" class="dropbtn">
+                <a href="{{ url_for( 'participants' ) }}">Teilnehmerliste bearbeiten</a>
             </li>
-            <li id="menu-item-user" class="nav-links">
-                <a href="">Benutzerverwaltung</a>
+            <li id="menu-item-user" class="dropbtn">
+                <a href="{{ url_for( 'post_field_reg_admin' ) }}">Adminverwaltung</a>
             </li>
         </ul>
     </div>
@@ -81,7 +87,36 @@
     <div class="admin-container">
 
         <h1>Wilkommen Admin</h1>
-
+        <table border="1">
+            <tr>
+                {% for col in colnames %}
+                <th >ID</th>
+                <th >Datum</th>
+                <th >Anrede</th>
+                <th >Name</th>
+                <th >Vorname</th>
+                <th >Klasse</th>
+                <th >Klassenleitung</th>
+                <th >volljährig</th>
+                <th >Bezahlt</th>
+                {% endfor %}
+            </tr>
+            {% for record in adminmask %}
+            <tr>
+                {% for col in colnames %}
+                <th id="id">{{ record[col] }}</th>
+                <th id="datum">{{ record[col] }}</th>
+                <th id="anrede">{{ record[col] }}</th>
+                <th id="name">{{ record[col] }}</th>
+                <th id="vorname">{{ record[col] }}</th>
+                <th id="klasse">{{ record[col] }}</th>
+                <th id="klassenleitung">{{ record[col] }}</th>
+                <th id="volljährig">{{ record[col] }}</th>
+                <th id="hat_bezahlt">{{ record[col] }}</th>
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
 
     </div>
 </div>

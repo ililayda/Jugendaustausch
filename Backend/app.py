@@ -25,17 +25,21 @@ app = Flask(__name__, template_folder='../HTML_Backend', static_folder='../stati
 
 @app.route('/')
 def home():
-    if not session.get('logged_in'):
-        return render_template('index.html')
-    else:
+    if session.get('logged_in'):
         return render_template('homepage.html')
+    elif session.get('logged_in_admin'):
+        return render_template('adminmask.html')
+    else:
+        return render_template('index.html')
 
 @app.route('/homepage')
 def homepage():
-    if not session.get('logged_in'):
-        return render_template('login.html')
-    else:
+    if session.get('logged_in'):
         return render_template('homepage.html')
+    elif session.get('logged_in_admin'):
+        return render_template('adminmask.html')
+    else:
+        return render_template('index.html')
 
 @app.route('/login')
 def login():
@@ -129,7 +133,23 @@ def save_admin_data():
 
 @app.route("/adminmask") #admin maske html
 def adminmask():
-    return render_template('adminmask.html')
+    if session.get('logged_in_admin'):
+        session['logged_in_admin'] = True
+        return render_template('adminmask.html')
+    elif session.get('logged_in'):
+        return render_template('homepage.html')
+    else:
+        return render_template('index.html')
+
+@app.route("/participants") #admin maske html
+def participants():
+    if session.get('logged_in_admin'):
+        session['logged_in_admin'] = True
+        return render_template('participants.html')
+    elif session.get('logged_in'):
+        return render_template('homepage.html')
+    else:
+        return render_template('index.html')
 
 @app.route("/reg_au") #austausch registrierung html
 def participant_reg():
@@ -167,22 +187,26 @@ def get_search_():
                 name = value
     se.main(name) #erstellt die Datei suchergebnis.json, die muss ausgelesen werden
 
-@app.route("/post_field_cash", methods=["POST"]) #bestätigung der bar zahlung
-def get_id_for_bar_payment():
+@app.route("/post_field_cash_edit", methods=["POST"]) # veränderung
+def get_id_for_payment():
     for key, value in request.form.items():
-            if key == "id":
-                id = value
-    pb.main(id)
+        if key == "id":
+            id = value
+        elif key == "hat_bar_bezahlt":
+            hat_bar_bezahlt = value
+        elif key == "hat_online_bezahlt":
+            hat_online_bezahlt = value
 
-@app.route("/post_field_cash_on", methods=["POST"]) #bestätigung der online zahlung
-def get_id_for_online_payment():
-    for key, value in request.form.items():
-            if key == "id":
-                id = value
-    po.main(id)
+    if hat_online_bezahlt == 1:
+        po.main(id)
+
+    if hat_bar_bezahlt == 1:
+        pb.main(id)
 
 
-    # HTML FÜR ENGLISCH ###############################################################################################
+
+
+### HTML FÜR ENGLISCH ###############################################################################################
 
 
 
