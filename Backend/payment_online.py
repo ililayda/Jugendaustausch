@@ -27,9 +27,9 @@ def has_payed(conn, payment_info):
 def double_payment(conn, participant):
     
     sql = "UPDATE participants_"+str(dt.current_year)+" SET hat_bezahlt = ? WHERE id = ?; "
+    conn.commit()
     cur = conn.cursor()
     cur.execute(sql, participant)
-    conn.commit()
 
 def insert_online_payment(conn, payment):
     
