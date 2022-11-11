@@ -66,11 +66,8 @@
             <h1 class="h3 mb-3 font-weight-normal">Teilnehmer verwaltung</h1>
             <p><i>Hier können Admins, den Zahlungsstatus bearbeiten. </i></p>
 
-            <label for="vorname"><i class="fa  icon"> Vorname </i></label>
-            <input autocomplete="vorname" autofocus class="form-control" id="vorname" name="vorname" placeholder="Vorname eintragen" required type="text">
-
-            <label for="nachname"><i class="fa  icon"> Nachname </i></label>
-            <input autocomplete="nachname" autofocus class="form-control" id="nachname" name="nachname" placeholder="Nachname eintragen" required type="text">
+            <label for="id"><i class="fa  icon"> Schüler ID </i></label>
+            <input autocomplete="id" autofocus class="form-control" id="id" name="id" placeholder=" ID " required type="text">
 
             <label for="hat_bar_bezahlt"><i class="fa icon"> Anzahlung Bar bezahlt (80€) </i></label>
             <select id="hat_bar_bezahlt" name="hat_bar_bezahlt" class="form-control" required>
@@ -83,7 +80,7 @@
                 <option value="0">Nein</option>
             </select>
 
-            <button onclick="location.href='{{ url_for( 'payment_bar.py' );( 'payment_online.py' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
+            <button onclick="location.href='{{ url_for( 'payment_bar.py' ) }}';location.href='{{ url_for( 'payment_online.py' ) }}';" class="registerbtn btn btn-lg btn-primary" type="submit">
                 Änderungen speichern
             </button>
             <button onclick="location.href='adminmask.html';" class="registerbtn btn btn-rg btn-primary" type="submit">

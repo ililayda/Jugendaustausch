@@ -43,5 +43,6 @@ def main():
     with open("teilnehmerliste.json", "w") as outfile:
         outfile.write(json_output)
 
+
 if __name__ == '__main__':
     main()

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -78,10 +79,12 @@
 </div>
 <div class="flex-admin-center position-ref full-height">
     <div class="admin-container">
-
+        <script src="teilnehmerliste.json"></script>
         <h1>Wilkommen Admin</h1>
-        <table>
+        <table border="1">
+
             <tr>
+                {% for col in colnames %}
                 <th >ID</th>
                 <th >Datum</th>
                 <th >Anrede</th>
@@ -91,18 +94,23 @@
                 <th >Klassenleitung</th>
                 <th >volljährig</th>
                 <th >Bezahlt</th>
+                {% endfor %}
             </tr>
+            {% for record in adminmask %}
             <tr>
-                <th id="id"></th>
-                <th id="datum"></th>
-                <th id="anrede"></th>
-                <th id="name"></th>
-                <th id="vorname"></th>
-                <th id="klasse"></th>
-                <th id="klassenleitung"></th>
-                <th id="volljährig"></th>
-                <th id="hat_bezahlt"></th>
+                {% for col in colnames %}
+                <th id="id">{{ record[col] }}</th>
+                <th id="datum">{{ record[col] }}</th>
+                <th id="anrede">{{ record[col] }}</th>
+                <th id="name">{{ record[col] }}</th>
+                <th id="vorname">{{ record[col] }}</th>
+                <th id="klasse">{{ record[col] }}</th>
+                <th id="klassenleitung">{{ record[col] }}</th>
+                <th id="volljährig">{{ record[col] }}</th>
+                <th id="hat_bezahlt">{{ record[col] }}</th>
+                {% endfor %}
             </tr>
+            {% endfor %}
         </table>
 
 
